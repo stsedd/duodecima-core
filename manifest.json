@@ -1,8 +1,8 @@
 {
   "core": "Duodécima Core",
   "schemaVersion": 1,
-  "contentVersion": "2026.09.04.1",
-  "updatedAt": "2026-09-04",
+  "contentVersion": "2026.09.05.1",
+  "updatedAt": "2026-09-05",
   "status": "canonical-phase-1",
   "counts": {
     "deities": 52,

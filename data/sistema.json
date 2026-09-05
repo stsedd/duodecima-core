@@ -1,0 +1,286 @@
+{
+  "schemaVersion": 1,
+  "levels": {
+    "min": 1,
+    "max": 100
+  },
+  "attributes": {
+    "startingPoints": 8,
+    "normalMax": 5,
+    "increaseLevels": [
+      20,
+      40,
+      60,
+      80,
+      100
+    ]
+  },
+  "skills": {
+    "initialCountFormula": "2 + bônus de Inteligência",
+    "extraChoiceLevels": [
+      20,
+      40
+    ],
+    "trainableUnlockLevels": [
+      21,
+      41,
+      61,
+      81,
+      100
+    ]
+  },
+  "proficiency": {
+    "ranges": [
+      {
+        "min": 0,
+        "max": 20,
+        "bonus": 1
+      },
+      {
+        "min": 21,
+        "max": 40,
+        "bonus": 2
+      },
+      {
+        "min": 41,
+        "max": 60,
+        "bonus": 3
+      },
+      {
+        "min": 61,
+        "max": 80,
+        "bonus": 4
+      },
+      {
+        "min": 81,
+        "max": 99,
+        "bonus": 5
+      },
+      {
+        "min": 100,
+        "max": null,
+        "bonus": 6
+      }
+    ],
+    "expertiseMultiplier": 2
+  },
+  "training": {
+    "masteryAt": 30,
+    "stakes": [
+      {
+        "id": "0-15",
+        "min": 0,
+        "max": 15
+      },
+      {
+        "id": "16-29",
+        "min": 16,
+        "max": 29
+      },
+      {
+        "id": "30+",
+        "min": 30,
+        "max": null
+      }
+    ],
+    "solo": {
+      "simple": "1–2",
+      "complex": "2–4",
+      "exemplary": "até 5"
+    },
+    "group": {
+      "simple": "2–3",
+      "complex": "até 5",
+      "exemplary": "até 7"
+    },
+    "rankBonus": {
+      "soldado": 2,
+      "optio": 2,
+      "centuriao": 3
+    },
+    "weaponMastery": "Ao chegar a 30 estacas com uma arma, pode adicionar BP ao utilizá-la.",
+    "shieldMastery": "Escudo dominado adiciona metade do BP, arredondado para cima, na Defesa."
+  },
+  "talents": {
+    "gainLevels": [
+      1,
+      30,
+      60,
+      90
+    ],
+    "defaultRepeatable": true
+  },
+  "resources": {
+    "energy": {
+      "base": 100,
+      "increment": 25,
+      "everyLevels": 5,
+      "lowThresholdRatio": 0.5,
+      "lowPenaltyD20": -1,
+      "atZero": "Inconsciente"
+    },
+    "sanity": {
+      "base": 100,
+      "states": [
+        {
+          "min": 71,
+          "max": 100,
+          "name": "Estável",
+          "effect": "Sem penalidades."
+        },
+        {
+          "min": 41,
+          "max": 70,
+          "name": "Instável",
+          "effect": "−2 em Inteligência, Carisma e testes ligados a lógica ou concentração."
+        },
+        {
+          "min": 21,
+          "max": 40,
+          "name": "Abalado",
+          "effect": "−5 em Inteligência e Carisma; −3 em testes de Fé. Ataques que explorem medo causam dano dobrado à Sanidade."
+        },
+        {
+          "min": 1,
+          "max": 20,
+          "name": "À Beira da Loucura",
+          "effect": "Falha automática contra ficar Abalado ou Apavorado. No início do turno, Fé DT 15; falha impede agir."
+        },
+        {
+          "min": 0,
+          "max": 0,
+          "name": "Louco",
+          "effect": "Perda permanente do personagem."
+        }
+      ]
+    }
+  },
+  "abilityEnergyCosts": [
+    {
+      "slots": [
+        1,
+        2
+      ],
+      "cost": 20
+    },
+    {
+      "slots": [
+        3,
+        4
+      ],
+      "cost": 45
+    },
+    {
+      "slots": [
+        5,
+        6
+      ],
+      "cost": 70
+    },
+    {
+      "slots": [
+        7,
+        8
+      ],
+      "cost": 95
+    },
+    {
+      "slots": [
+        9,
+        10
+      ],
+      "cost": 130
+    }
+  ],
+  "rests": {
+    "short": {
+      "minimum": "1 hora",
+      "hp": 25,
+      "energy": 150,
+      "refreshLimitedAbilities": "quando aplicável"
+    },
+    "long": {
+      "minimum": "8 horas",
+      "hp": "máximo",
+      "energy": "máximo",
+      "note": "Ferimentos narrativos não desaparecem magicamente."
+    }
+  },
+  "combat": {
+    "actionsPerTurn": 2,
+    "simpleInteraction": 1,
+    "baseRoll": "1d20",
+    "skillRoll": "1d20 + atributo sugerido + bônus aplicáveis",
+    "initiative": "1d20 + Destreza + Agilidade",
+    "defense": "1d20 + Destreza + bônus situacionais",
+    "resistance": "teste de atributo puro, salvo alteração explícita",
+    "abilityDC": "8 + atributo de conjuração + BP + modificadores especiais",
+    "weaponAttack": "1d20 + Força ou Destreza + bônus aplicáveis",
+    "abilityAttack": "1d20 + atributo de conjuração + BP",
+    "pvp": "Atacante rola ataque e defensor rola Defesa; maior vence; empate favorece a ação ofensiva.",
+    "monsters": "Por padrão usam CA/CD fixa e continuam fazendo Resistências quando necessário.",
+    "criticals": {
+      "natural1": "Falha automática; não gera contra-ataque automático.",
+      "natural20": "Acerto garantido e dano crítico.",
+      "standard": "Dobra os dados.",
+      "brutal": "Adiciona o valor máximo dos dados originais."
+    },
+    "baseDamage": {
+      "melee": "d8 + bônus",
+      "ranged": "d6 + bônus",
+      "unarmed": "d6 + bônus",
+      "diceByLevel": [
+        {
+          "min": 1,
+          "max": 39,
+          "dice": 1
+        },
+        {
+          "min": 40,
+          "max": 79,
+          "dice": 2
+        },
+        {
+          "min": 80,
+          "max": null,
+          "dice": 3
+        }
+      ]
+    },
+    "summons": {
+      "firstCastActions": 2,
+      "actionPerTurn": 1,
+      "renewalActions": 1,
+      "renewal": "Enquanto ativa, pode gastar uma ação, Energia e requisitos para renovar a duração máxima; se possui HP, a renovação restaura o HP máximo."
+    }
+  },
+  "exhaustion": {
+    "max": 6,
+    "d20PenaltyPerLevel": -2,
+    "speedMetersPerLevel": -5,
+    "level5": "HP máximo e Energia máxima pela metade.",
+    "level6": "Morte."
+  },
+  "death": {
+    "roll": "1d20",
+    "successAt": 10,
+    "successesToStabilize": 3,
+    "failuresToDie": 3,
+    "natural1Failures": 2,
+    "natural20": "Recupera 1 HP e pode agir.",
+    "damageAtZeroFailures": 1,
+    "criticalDamageAtZeroFailures": 2,
+    "firstAid": {
+      "skill": "medicina",
+      "dc": 10
+    },
+    "stableRecovery": "Sem cura, recupera 1 HP após 1d4 horas."
+  },
+  "removedRules": [
+    {
+      "id": "return-to-1hp-cumulative-penalty",
+      "removedAt": "2026-09-04",
+      "note": "Não existe penalidade cumulativa em dados por cair a 0 HP e retornar."
+    }
+  ]
+}

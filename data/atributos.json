@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-04",
+  "attributes": [
+    {
+      "id": "for",
+      "name": "Força",
+      "abbr": "FOR",
+      "description": "Poder muscular, armas pesadas e dano físico."
+    },
+    {
+      "id": "des",
+      "name": "Destreza",
+      "abbr": "DES",
+      "description": "Agilidade, acurácia, finesse e Defesa."
+    },
+    {
+      "id": "con",
+      "name": "Constituição",
+      "abbr": "CON",
+      "description": "Vitalidade, resistência física e progressão de HP."
+    },
+    {
+      "id": "int",
+      "name": "Inteligência",
+      "abbr": "INT",
+      "description": "Raciocínio, análise, investigação e perícias iniciais."
+    },
+    {
+      "id": "fe",
+      "name": "Fé",
+      "abbr": "FÉ",
+      "description": "Vontade, poder divino, intervenção e conjuração."
+    },
+    {
+      "id": "car",
+      "name": "Carisma",
+      "abbr": "CAR",
+      "description": "Persuasão, atuação, manipulação e interação social."
+    }
+  ]
+}

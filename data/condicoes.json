@@ -1,0 +1,179 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-04",
+  "count": 27,
+  "stackingRule": "Condições são estados temporários. Se várias se aplicarem, seus efeitos se acumulam; se entrarem em conflito, aplique o mais severo.",
+  "conditions": [
+    {
+      "id": "abalado",
+      "name": "Abalado",
+      "description": "Com medo ou receio de algo. A criatura sofre −2 em jogadas de ataque e testes de habilidade, perícia e resistência. Se ficar Abalada novamente, passa a ficar Apavorada.",
+      "automation": {}
+    },
+    {
+      "id": "agarrado",
+      "name": "Agarrado",
+      "description": "Preso em combate corpo a corpo. Sofre −2 nas jogadas de ataque, só pode atacar com armas leves e não pode se mover.",
+      "automation": {}
+    },
+    {
+      "id": "apavorado",
+      "name": "Apavorado",
+      "description": "Não consegue se aproximar voluntariamente da fonte do medo. Enquanto estiver ciente dela, possui desvantagem nas jogadas de ataque e testes de habilidade.",
+      "automation": {}
+    },
+    {
+      "id": "atordoado",
+      "name": "Atordoado",
+      "description": "A criatura fica incapaz de agir e também fica Desprevenida.",
+      "automation": {
+        "defenseMod": -4
+      }
+    },
+    {
+      "id": "caido",
+      "name": "Caído",
+      "description": "Está deitado e move-se com metade do deslocamento. Oponentes recebem +3 em ataques corpo a corpo contra ela, mas sofrem −3 em ataques à distância.",
+      "automation": {}
+    },
+    {
+      "id": "cego",
+      "name": "Cego",
+      "description": "Falha automaticamente em qualquer teste que exija visão. Ataques contra a criatura possuem vantagem; as jogadas de ataque e Defesa da criatura são feitas com desvantagem.",
+      "automation": {}
+    },
+    {
+      "id": "confuso",
+      "name": "Confuso",
+      "description": "No começo de cada turno, role 1d6: 1 foge de quem causou a confusão; 2–3 não faz nada; 4–5 ataca a criatura mais próxima; 6 age normalmente.",
+      "automation": {}
+    },
+    {
+      "id": "desprevenido",
+      "name": "Desprevenido",
+      "description": "Está com a guarda baixa e sofre −4 na Defesa.",
+      "automation": {
+        "defenseMod": -4
+      }
+    },
+    {
+      "id": "desorientado",
+      "name": "Desorientado",
+      "description": "Sofre −2 em Percepção, Investigação, testes de Destreza e Defesa.",
+      "automation": {
+        "defenseMod": -2,
+        "dexRollMod": -2
+      }
+    },
+    {
+      "id": "enjoado",
+      "name": "Enjoado",
+      "description": "Só pode realizar uma ação por rodada. Se ficar Enjoado novamente, passa a ficar Envenenado.",
+      "automation": {}
+    },
+    {
+      "id": "enredado",
+      "name": "Enredado",
+      "description": "Sofre −2 em ataques, −4 em Destreza, move-se com metade do deslocamento e não pode correr ou fazer investidas.",
+      "automation": {}
+    },
+    {
+      "id": "envenenado",
+      "name": "Envenenado",
+      "description": "Recebe desvantagem em ataques e testes de habilidade. Se ficar Enjoado ou Envenenado novamente, sofre +1d4 de dano de veneno e também passa a ter desvantagem em testes de Defesa.",
+      "automation": {}
+    },
+    {
+      "id": "exausto",
+      "name": "Exausto",
+      "description": "É cumulativo. Cada aplicação concede 1 nível de Exaustão. Em testes de d20, o resultado é reduzido em 2 × nível de Exaustão. A velocidade é reduzida em 5 m × nível. No nível 5, perde metade do HP máximo e da Energia; no nível 6, morre.",
+      "automation": {}
+    },
+    {
+      "id": "fascinado",
+      "name": "Fascinado",
+      "description": "Fica parada observando a fonte da fascinação e sofre −4 em Percepção. Qualquer ameaça óbvia encerra o efeito. Outra criatura pode gastar uma ação para sacudi-la e anular a condição.",
+      "automation": {}
+    },
+    {
+      "id": "fatigado",
+      "name": "Fatigado",
+      "description": "Sofre −2 em Força e Destreza e não pode correr ou fazer investidas. Se ficar Fatigado novamente, passa a ficar Exausto.",
+      "automation": {}
+    },
+    {
+      "id": "inconsciente",
+      "name": "Inconsciente",
+      "description": "Fica indefesa e incapaz de agir. Ataques corpo a corpo contra uma criatura inconsciente são considerados acertos críticos.",
+      "automation": {}
+    },
+    {
+      "id": "incorporeo",
+      "name": "Incorpóreo",
+      "description": "Sem corpo físico. É imune a ataques não mágicos; ataques mágicos ainda possuem 50% de chance de falha. Pode atravessar objetos sólidos, salvo efeitos de essência. Ataques incorpóreos ignoram bônus de CA vindos de armadura, escudo e armadura natural.",
+      "automation": {}
+    },
+    {
+      "id": "invisivel",
+      "name": "Invisível",
+      "description": "Não pode ser vista. Se estiver invisível ao rolar iniciativa, possui vantagem. Ataques contra ela têm desvantagem e seus ataques possuem vantagem, salvo contra criaturas capazes de percebê-la. Equipamentos carregados também ficam ocultos.",
+      "automation": {}
+    },
+    {
+      "id": "lento",
+      "name": "Lento",
+      "description": "Só pode realizar uma ação padrão ou uma ação de movimento por rodada, não ambas. Sofre −1 em ataques, Defesa e testes de Destreza e move-se à metade do deslocamento.",
+      "automation": {}
+    },
+    {
+      "id": "ofuscado",
+      "name": "Ofuscado",
+      "description": "Com a visão prejudicada, sofre −1 nas jogadas de ataque.",
+      "automation": {}
+    },
+    {
+      "id": "paralisado",
+      "name": "Paralisado",
+      "description": "Fica indefeso e incapaz de se mover. Força e Destreza efetivas passam a −1, mas ações puramente mentais ainda são possíveis. A Defesa é 5.",
+      "automation": {
+        "fixedDefense": 5
+      }
+    },
+    {
+      "id": "pasmo",
+      "name": "Pasmo",
+      "description": "Fica incapaz de agir, mas ainda consegue se defender normalmente.",
+      "automation": {}
+    },
+    {
+      "id": "queimando",
+      "name": "Queimando",
+      "description": "No início de cada turno, faça Destreza CD 15. Em sucesso, apaga o fogo. Em falha, sofre 1d4 de dano e continua queimando. Uma criatura pode gastar uma ação para apagar as chamas de si ou de outra criatura próxima.",
+      "automation": {}
+    },
+    {
+      "id": "sangrando",
+      "name": "Sangrando",
+      "description": "No início de cada turno, faça Constituição CD 15. Em sucesso, estabiliza. Em falha, sofre 1d4 de dano e continua sangrando. Receber cura remove a condição.",
+      "automation": {}
+    },
+    {
+      "id": "silenciado",
+      "name": "Silenciado",
+      "description": "Não pode usar magias ou habilidades que exijam som, fala clara, comando verbal ou conjuração verbal.",
+      "automation": {}
+    },
+    {
+      "id": "surdo",
+      "name": "Surdo",
+      "description": "Sofre −4 em Iniciativa e Percepção. Para lançar magia, precisa fazer um teste de Fé com CD 10 + nível da magia.",
+      "automation": {}
+    },
+    {
+      "id": "surpreendido",
+      "name": "Surpreendido",
+      "description": "Não está ciente dos inimigos. Não pode agir e fica Desprevenido durante a primeira rodada do combate.",
+      "automation": {}
+    }
+  ]
+}

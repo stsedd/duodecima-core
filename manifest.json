@@ -1,0 +1,31 @@
+{
+  "core": "Duodécima Core",
+  "schemaVersion": 1,
+  "contentVersion": "2026.09.04.1",
+  "updatedAt": "2026-09-04",
+  "status": "canonical-phase-1",
+  "counts": {
+    "deities": 52,
+    "kits": 51,
+    "skills": 26,
+    "talents": 32,
+    "conditions": 27
+  },
+  "files": {
+    "attributes": "data/atributos.json",
+    "skills": "data/pericias.json",
+    "talents": "data/talentos.json",
+    "conditions": "data/condicoes.json",
+    "pantheons": "data/panteoes.json",
+    "gods": "data/deuses.json",
+    "system": "data/sistema.json",
+    "equipment": "data/equipamentos.json",
+    "aliases": "data/aliases.json"
+  },
+  "notes": [
+    "Fase 1 centraliza entidades mecânicas compartilhadas por Guia, Ficha e Scutum.",
+    "Minerva está registrada, mas sem kit selecionável.",
+    "Vulcano/Autômato usa blocos aninhados: Bastião, Infiltrador e Utilitário não são achatados numa estaca genérica.",
+    "A antiga penalidade cumulativa por retornar após 0 HP está explicitamente removida."
+  ]
+}

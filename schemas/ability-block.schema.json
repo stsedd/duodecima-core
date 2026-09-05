@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Duodécima Core — Ability block",
+  "type": "object",
+  "properties": {
+    "type": {
+      "type": "string",
+      "enum": [
+        "description",
+        "tiers",
+        "note",
+        "variants",
+        "options"
+      ]
+    },
+    "text": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array"
+    }
+  },
+  "required": [
+    "type"
+  ],
+  "additionalProperties": true
+}

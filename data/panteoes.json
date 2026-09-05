@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-04",
+  "groups": [
+    {
+      "id": "triunviros",
+      "name": "Triunviros",
+      "order": 1
+    },
+    {
+      "id": "dii-consentis",
+      "name": "Dii Consentis",
+      "order": 2
+    },
+    {
+      "id": "dii-inferi",
+      "name": "Dii Inferi",
+      "order": 3
+    },
+    {
+      "id": "alati",
+      "name": "Alati",
+      "order": 4
+    },
+    {
+      "id": "ventis",
+      "name": "Ventis",
+      "order": 5
+    },
+    {
+      "id": "numina",
+      "name": "Numina",
+      "order": 6
+    }
+  ]
+}

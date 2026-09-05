@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 1,
+  "materials": [
+    {
+      "id": "ferro-aco",
+      "name": "Ferro / Aço",
+      "attack": 0,
+      "resistance": 3,
+      "unbreakable": false,
+      "armorHint": "Leve"
+    },
+    {
+      "id": "mithril",
+      "name": "Mithril",
+      "attack": 1,
+      "resistance": 2,
+      "unbreakable": false,
+      "armorHint": "Defensiva"
+    },
+    {
+      "id": "bronze-celestial",
+      "name": "Bronze Celestial",
+      "attack": 1,
+      "resistance": 4,
+      "unbreakable": false,
+      "armorHint": "Defensiva"
+    },
+    {
+      "id": "uro",
+      "name": "Uro",
+      "attack": 2,
+      "resistance": 5,
+      "unbreakable": false,
+      "armorHint": "Responsiva"
+    },
+    {
+      "id": "ouro-imperial",
+      "name": "Ouro Imperial",
+      "attack": 3,
+      "resistance": null,
+      "unbreakable": true,
+      "armorHint": "Sem armadura/escudo complexo"
+    },
+    {
+      "id": "ferro-estigio",
+      "name": "Ferro Estígio",
+      "attack": 3,
+      "resistance": null,
+      "unbreakable": true,
+      "armorHint": "Não é normalmente forjável"
+    }
+  ],
+  "armorTypes": [
+    {
+      "id": "nenhuma",
+      "name": "Sem armadura",
+      "defense": 0,
+      "reduction": 0
+    },
+    {
+      "id": "leve",
+      "name": "Leve",
+      "defense": 1,
+      "reduction": 1
+    },
+    {
+      "id": "defensiva",
+      "name": "Defensiva",
+      "defense": 2,
+      "reduction": 1
+    },
+    {
+      "id": "responsiva",
+      "name": "Responsiva",
+      "defense": 1,
+      "reduction": 2
+    },
+    {
+      "id": "pesada",
+      "name": "Pesada",
+      "defense": 2,
+      "reduction": 2
+    }
+  ],
+  "weaponTypes": [
+    {
+      "id": "corpo-a-corpo",
+      "name": "Corpo a corpo",
+      "die": 8
+    },
+    {
+      "id": "distancia",
+      "name": "À distância",
+      "die": 6
+    },
+    {
+      "id": "desarmado",
+      "name": "Desarmado / improvisado",
+      "die": 6
+    }
+  ]
+}

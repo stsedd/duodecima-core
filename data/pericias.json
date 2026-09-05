@@ -1,0 +1,189 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-04",
+  "count": 26,
+  "skills": [
+    {
+      "id": "atletismo",
+      "name": "Atletismo",
+      "attribute": "for",
+      "description": "Esforço físico intenso: levantar peso, correr, nadar, escalar ou saltar.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "acrobacia",
+      "name": "Acrobacia",
+      "attribute": "des",
+      "description": "Equilíbrio, saltos ágeis, manobras corporais e escapar de agarrões.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "furtividade",
+      "name": "Furtividade",
+      "attribute": "des",
+      "description": "Mover-se em silêncio e se esconder de forma eficaz.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "maos-leves",
+      "name": "Mãos Leves",
+      "attribute": "des",
+      "description": "Manipular objetos discretamente, furtos e truques manuais.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "agilidade",
+      "name": "Agilidade",
+      "attribute": "des",
+      "description": "Reflexos, rapidez e iniciativa de combate.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "tolerancia",
+      "name": "Tolerância",
+      "attribute": "con",
+      "description": "Resistir a venenos, álcool, dor, calor, frio e desgaste físico.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "investigacao",
+      "name": "Investigação",
+      "attribute": "int",
+      "description": "Analisar pistas, armadilhas e segredos.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "natureza",
+      "name": "Natureza",
+      "attribute": "int",
+      "description": "Ecossistemas, plantas, animais, climas e fenômenos naturais.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "medicina",
+      "name": "Medicina",
+      "attribute": "int",
+      "description": "Ferimentos, doenças, diagnóstico e estabilização.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "sobrevivencia",
+      "name": "Sobrevivência",
+      "attribute": "int",
+      "description": "Rastreamento, caça, clima e orientação em ambientes hostis.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "conhecimento-historico",
+      "name": "Conhecimento Histórico",
+      "attribute": "int",
+      "description": "Fatos, guerras, lendas e figuras históricas.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "conhecimento-mitico",
+      "name": "Conhecimento Mítico",
+      "attribute": "int",
+      "description": "Mitos, monstros, poemas e histórias.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "guerra",
+      "name": "Guerra",
+      "attribute": "int",
+      "description": "Conhecimento sobre táticas militares, formações, estratégias de batalha, cerco, comando de tropas, armamentos e leitura de conflitos.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "oficio",
+      "name": "Ofício",
+      "attribute": "int",
+      "description": "Conhecimento prático sobre trabalhos manuais, técnicas de produção, reparos simples, ferramentas, construção, artesanato e criação de objetos úteis.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "estrategia",
+      "name": "Estratégia",
+      "attribute": "int",
+      "description": null,
+      "documentationStatus": "used-in-current-kits"
+    },
+    {
+      "id": "conhecimento-religioso",
+      "name": "Conhecimento Religioso",
+      "attribute": "fe",
+      "description": "Deuses, cultos, ritos e crenças religiosas.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "conhecimento-magico",
+      "name": "Conhecimento Mágico",
+      "attribute": "fe",
+      "description": "Magia, tradições místicas, símbolos e planos.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "intuicao",
+      "name": "Intuição",
+      "attribute": "fe",
+      "description": "Perceber intenções, emoções, caráter e mentiras.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "percepcao",
+      "name": "Percepção",
+      "attribute": "fe",
+      "description": "Notar sons, movimentos, detalhes e arredores.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "adestrar-animais",
+      "name": "Adestrar Animais",
+      "attribute": "fe",
+      "description": "Acalmar, guiar, treinar ou lidar com animais e criaturas domesticáveis, percebendo seus instintos, reações e limites.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "etiqueta",
+      "name": "Etiqueta",
+      "attribute": "car",
+      "description": "Lidar com normas sociais, política, hierarquia, cerimônias, etiqueta romana e situações formais sem transformar tudo em um desastre diplomático.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "atuacao",
+      "name": "Atuação",
+      "attribute": "car",
+      "description": "Música, dança, teatro e outras artes.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "manipulacao",
+      "name": "Manipulação",
+      "attribute": "car",
+      "description": "Blefar, mentir e manipular sem ser descoberto.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "intimidacao",
+      "name": "Intimidação",
+      "attribute": "car",
+      "description": "Ameaçar e impor respeito ou medo.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "persuasao",
+      "name": "Persuasão",
+      "attribute": "car",
+      "description": "Convencer, negociar, encantar e inspirar confiança.",
+      "documentationStatus": "documented"
+    },
+    {
+      "id": "enganacao",
+      "name": "Enganação",
+      "attribute": "car",
+      "description": null,
+      "documentationStatus": "used-in-current-kits"
+    }
+  ]
+}

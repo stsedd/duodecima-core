@@ -1,43 +1,19 @@
-# Duodécima Core
+# Character Archive · Ficha Oficial da Duodécima · v5.2 Core
 
-Fonte canônica compartilhada do ecossistema da **Legio XII Fulminata**.
+Ficha de personagem da Legio XII Fulminata integrada ao **Duodécima Core**.
 
-O Guia, a Ficha e o Scutum Magistri continuam sites separados. Este repositório contém os dados mecânicos que eles devem compartilhar para não existirem três versões diferentes das mesmas regras.
+## O que mudou
 
-## Conteúdo da fase 1
-
-- 52 divindades registradas: **51 kits + Minerva sem kit**;
-- 26 perícias usadas pelos kits/ficha atuais;
-- 32 talentos;
-- 27 condições;
-- atributos e progressões;
-- Energia, Sanidade, BP, Treinamento, Combate, Exaustão e Morte;
-- materiais, armaduras e tipos de arma;
-- aliases para nomes latinos/antigos e compatibilidade de saves;
-- estrutura flexível de habilidades por blocos.
-
-### Vulcano / Autômato
-
-O Autômato já está modelado como habilidade complexa: **Bastião, Infiltrador e Utilitário** são variantes independentes. Bastião e Infiltrador têm suas próprias estacas internas; Utilitário não recebe uma progressão inventada. Esse formato (`blocks`) é o modelo para futuras habilidades fora do padrão.
-
-## Regra de ouro
-
-Depois que os três produtos estiverem integrados, uma regra compartilhada é alterada **aqui**, e não copiada manualmente para cada site.
+- Regras compartilhadas passam a vir de `https://stsedd.github.io/duodecima-core/`.
+- 51 kits divinos são carregados do Core quando online.
+- Perícias, talentos e condições são carregados do Core.
+- Parte das progressões compartilhadas (BP, Energia, treinamento, descanso e Exaustão) passa a consultar o Core.
+- Habilidades complexas do Core são preservadas; `Autômato`, de Vulcano, exibe Bastião, Infiltrador e Utilitário com progressões internas próprias.
+- A antiga penalidade cumulativa por retornar após 0 HP foi removida também dos textos residuais da ficha.
+- Os arquivos locais de regras permanecem como fallback para evitar tela quebrada se o Core estiver indisponível.
 
 ## Publicação
 
-Use GitHub Pages em `main / (root)`. Se o repositório se chamar `duodecima-core`, a URL esperada é:
+O ZIP é root-ready para GitHub Pages. Substitua os arquivos da raiz do repositório atual da ficha e mantenha Pages publicado a partir de `main / (root)`.
 
-`https://stsedd.github.io/duodecima-core/`
-
-## Validação
-
-Sem instalar dependências:
-
-`node scripts/validate.mjs`
-
-O workflow em `.github/workflows/validate.yml` também valida cada push.
-
-## Escopo desta primeira fase
-
-Nesta fase centralizamos primeiro o que realmente precisa sincronizar imediatamente entre os três produtos: deuses, perícias, talentos, condições e mecânicas comuns. Magia, Crafting e conteúdo editorial de Roma continuam no Guia por enquanto; depois que o pipeline estiver provado, podemos estruturá-los no Core também sem colocar tudo em risco de uma vez.
+Leia `CORE-INTEGRATION.md` para o teste de sincronização.

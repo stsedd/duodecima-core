@@ -14,6 +14,15 @@ for(const god of d.deities){
   for(const id of [...(god.grantedSkills||[]),...(god.skillChoices||[])]) if(!skillIds.has(id)) errors.push(`${god.id} referencia perícia inexistente: ${id}`);
   const ids=new Set(); for(const ab of [...(god.passives||[]),...(god.actives||[])]){if(ids.has(ab.id)) errors.push(`${god.id} tem habilidade duplicada: ${ab.id}`); ids.add(ab.id);}
 }
+
+const vis=d.deities.find(x=>x.id==='vis');
+if(vis?.castingAttribute!=='fe') errors.push('Vis deve conjurar com Fé.');
+if(!(vis?.grantedSkills||[]).includes('intimidacao')) errors.push('Vis deve conceder Intimidação como perícia divina inicial.');
+const lineage=m.files.system?read(m.files.system).lineage:null;
+if(!lineage?.compound||lineage.compound.formula!=='DEUS + LEGADO') errors.push('Regra de Legado Composto ausente/incorreta.');
+if(!lineage?.direct||lineage.direct.formula!=='LEGADO + LEGADO') errors.push('Regra de Legado Direto ausente/incorreta.');
+const magicAwakening=m.files.system?read(m.files.system).magicAwakening:null;
+if(magicAwakening?.canReduceBelowZero!==true) errors.push('Sacrifício mágico deve permitir atributo físico abaixo de 0.');
 const vul=d.deities.find(x=>x.id==='vulcano'), auto=vul?.actives.find(x=>x.id==='automato');
 const variants=auto?.blocks?.find(x=>x.type==='variants')?.items||[];
 if(variants.length!==3) errors.push('Vulcano/Autômato deve ter 3 chassis estruturados.');

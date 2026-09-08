@@ -26961,7 +26961,7 @@
       "kitAvailable": true,
       "selectable": true,
       "source": "Guia consolidado · 04/09/2026",
-      "castingAttribute": "for",
+      "castingAttribute": "fe",
       "hp": {
         "base": 30,
         "perDecade": 5,
@@ -26972,14 +26972,18 @@
         "con": 1
       },
       "skillBonuses": {},
-      "grantedSkills": [],
+      "grantedSkills": [
+        "intimidacao"
+      ],
       "skillChoices": [],
       "resource": {
         "name": "Imperium",
         "maxFormula": "10 (barra coletiva Alati)",
         "scope": "collective"
       },
-      "notes": [],
+      "notes": [
+        "Atualizado em 08/09/2026: atributo de conjuração é Fé e a perícia divina inicial é Intimidação."
+      ],
       "passives": [
         {
           "id": "imperium",

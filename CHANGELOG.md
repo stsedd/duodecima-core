@@ -1,3 +1,9 @@
+## 2026-09-08 · v2026.09.08.1
+- Vis: atributo de conjuração alterado para **Fé**.
+- Vis: perícia divina inicial definida como **Intimidação**.
+- Sistema: adicionadas definições canônicas de **Legado Composto (DEUS + LEGADO)** e **Legado Direto (LEGADO + LEGADO)**.
+- Magia: sacrifício físico pode reduzir FOR/DES/CON abaixo de 0; cada ponto continua concedendo +25 Energia, até 3 pontos totais.
+
 
 ## 2026-09-05 · v2026.09.05.1
 - Iuppiter Optimus Maximus: bônus iniciais ajustados de `+1 Força, +2 Fé` para `+1 Força, +1 Fé, +2 Constituição`.

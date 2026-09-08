@@ -1,8 +1,8 @@
 {
   "core": "Duodécima Core",
   "schemaVersion": 1,
-  "contentVersion": "2026.09.05.1",
-  "updatedAt": "2026-09-05",
+  "contentVersion": "2026.09.08.1",
+  "updatedAt": "2026-09-08",
   "status": "canonical-phase-1",
   "counts": {
     "deities": 52,
@@ -26,6 +26,8 @@
     "Fase 1 centraliza entidades mecânicas compartilhadas por Guia, Ficha e Scutum.",
     "Minerva está registrada, mas sem kit selecionável.",
     "Vulcano/Autômato usa blocos aninhados: Bastião, Infiltrador e Utilitário não são achatados numa estaca genérica.",
-    "A antiga penalidade cumulativa por retornar após 0 HP está explicitamente removida."
+    "A antiga penalidade cumulativa por retornar após 0 HP está explicitamente removida.",
+    "Vis: conjuração por Fé e perícia divina inicial Intimidação.",
+    "Regras de Legado e sacrifício do despertar mágico foram estruturadas no sistema compartilhado; sacrifícios físicos podem levar FOR/DES/CON abaixo de zero."
   ]
 }

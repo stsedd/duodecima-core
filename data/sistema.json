@@ -282,5 +282,44 @@
       "removedAt": "2026-09-04",
       "note": "Não existe penalidade cumulativa em dados por cair a 0 HP e retornar."
     }
-  ]
+  ],
+  "lineage": {
+    "normal": {
+      "id": "normal",
+      "label": "Prole direta",
+      "formula": "DEUS",
+      "description": "É filho direto de uma única divindade e usa somente o kit dessa origem."
+    },
+    "compound": {
+      "id": "compound",
+      "label": "Legado Composto",
+      "formula": "DEUS + LEGADO",
+      "description": "É filho direto de um deus, mas também carrega uma herança divina secundária.",
+      "passiveReplacementsMax": 3,
+      "activeReplacementsMax": 2,
+      "activeReplacementSlotsMax": 5,
+      "activeReplacementLevelRule": "same-or-lower"
+    },
+    "direct": {
+      "id": "direct",
+      "label": "Legado Direto",
+      "formula": "LEGADO + LEGADO",
+      "description": "É filho de semideuses e carrega duas heranças divinas próximas.",
+      "primaryPassives": 4,
+      "secondaryPassives": 3,
+      "activeSlotsPerOrigin": 5
+    }
+  },
+  "magicAwakening": {
+    "sacrificialAttributes": [
+      "for",
+      "des",
+      "con"
+    ],
+    "maxSacrifices": 3,
+    "sacrificeEnergyEach": 25,
+    "canReduceBelowZero": true,
+    "divineBonusesSacrificable": false,
+    "note": "Cada ponto sacrificado reduz em 1 o atributo físico estrutural e concede +25 de Energia máxima. O atributo pode ficar negativo. Bônus divinos não são pontos sacrificáveis."
+  }
 }

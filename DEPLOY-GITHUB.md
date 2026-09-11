@@ -1,19 +1,24 @@
-# Publicar o Duodécima Core no GitHub
+# Deploy no GitHub Pages
 
-1. Crie um repositório público chamado **duodecima-core** na conta `stsedd`.
-2. Extraia o ZIP.
-3. Envie **os arquivos que estão dentro dele** diretamente para a raiz do repositório.
-4. Na primeira tela do repositório você deve ver `manifest.json`, `index.html`, `data/`, `scripts/` etc.
-5. Faça o commit.
-6. Vá em **Settings → Pages**.
-7. Selecione **Deploy from a branch → main → /(root)**.
-8. Aguarde a publicação.
+1. Extraia o ZIP.
+2. Substitua os arquivos da raiz do repositório atual do Guia pelos arquivos desta pasta.
+3. Confirme que `index.html`, `app.js`, `content.js`, `core-bridge.js`, `styles.css` e `assets/` estão na raiz.
+4. Faça commit e push para `main`.
+5. Em **Settings → Pages**, mantenha **Deploy from a branch → main → /(root)**.
+6. Aguarde o Pages publicar.
 
-Depois teste no navegador:
+## Teste obrigatório
 
-- `https://stsedd.github.io/duodecima-core/`
-- `https://stsedd.github.io/duodecima-core/manifest.json`
-- `https://stsedd.github.io/duodecima-core/data/pericias.json`
-- `https://stsedd.github.io/duodecima-core/data/deuses.json`
+Abra o Guia e confira a sidebar:
 
-Quando essas quatro URLs abrirem, não altere Guia/Ficha/Scutum ainda: me envie a URL publicada do Core. A próxima etapa será conectar **primeiro o Guia** a ele com fallback local.
+- `CORE 2026.09.04.1` = integração funcionando.
+- `SNAPSHOT LOCAL` = o Guia abriu, mas não conseguiu ler o Core.
+
+Depois teste:
+
+- Sistema → Perícias;
+- Sistema → Talentos;
+- Sistema → Condições;
+- Deuses → Vulcano → Autômato.
+
+O Autômato deve mostrar **Bastião, Infiltrador e Utilitário** como blocos próprios, com as estacas internas de cada capacidade quando existirem.

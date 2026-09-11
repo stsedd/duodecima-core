@@ -1,9 +1,9 @@
 {
   "core": "Duodécima Core",
-  "schemaVersion": 1,
-  "contentVersion": "2026.09.08.1",
-  "updatedAt": "2026-09-08",
-  "status": "canonical-phase-1",
+  "schemaVersion": 2,
+  "contentVersion": "2026.09.11.1",
+  "updatedAt": "2026-09-11",
+  "status": "canonical-phase-2",
   "counts": {
     "deities": 52,
     "kits": 51,
@@ -23,11 +23,15 @@
     "aliases": "data/aliases.json"
   },
   "notes": [
-    "Fase 1 centraliza entidades mecânicas compartilhadas por Guia, Ficha e Scutum.",
-    "Minerva está registrada, mas sem kit selecionável.",
-    "Vulcano/Autômato usa blocos aninhados: Bastião, Infiltrador e Utilitário não são achatados numa estaca genérica.",
-    "A antiga penalidade cumulativa por retornar após 0 HP está explicitamente removida.",
+    "Fase 2 adiciona resources[] compatível com resource legado, incluindo recursos pessoais, coletivos, por alvo e locais de habilidade.",
+    "Maré Crescente, Acúmulo Necromântico e Carga Noturna usam o mesmo limite de Raiva do Trovão: 8 + 1 a cada 10 níveis.",
+    "Escolhas persistentes/progressivas de habilidades agora podem ser representadas em choices[] sem depender de interpretação do texto.",
+    "Concessões de perícia/especialização em passivas passam a aceitar skillEffects estruturados.",
+    "Tensão de Metus e Fadiga de Somnos são recursos por alvo; Potestas possui Imperium coletivo e Pontos de Potestas pessoais.",
+    "Dedicação Compartilhada de Aemulatio não usa Pontos de Determinação: concede +1/+2/+3 por 1/1/2 turnos.",
+    "Potestas escolhe Atletismo ou Intimidação; Fortuna recebe +1 Destreza em vez de +1 Agilidade.",
+    "Herança Monstruosa de Cimopoleia recupera Scaleskin, Dentes de Tubarão e Shimmerskin.",
     "Vis: conjuração por Fé e perícia divina inicial Intimidação.",
-    "Regras de Legado e sacrifício do despertar mágico foram estruturadas no sistema compartilhado; sacrifícios físicos podem levar FOR/DES/CON abaixo de zero."
+    "Regras de Legado e sacrifício do despertar mágico permanecem estruturadas; sacrifícios físicos podem levar FOR/DES/CON abaixo de zero."
   ]
 }

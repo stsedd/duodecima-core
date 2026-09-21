@@ -1,8 +1,8 @@
 {
   "core": "Duodécima Core",
   "schemaVersion": 2,
-  "contentVersion": "2026.09.11.1",
-  "updatedAt": "2026-09-11",
+  "contentVersion": "2026.09.21.1",
+  "updatedAt": "2026-09-21",
   "status": "canonical-phase-2",
   "counts": {
     "deities": 52,
@@ -32,6 +32,7 @@
     "Potestas escolhe Atletismo ou Intimidação; Fortuna recebe +1 Destreza em vez de +1 Agilidade.",
     "Herança Monstruosa de Cimopoleia recupera Scaleskin, Dentes de Tubarão e Shimmerskin.",
     "Vis: conjuração por Fé e perícia divina inicial Intimidação.",
+    "Legado Direto usa HP, bônus de atributos e perícia do deus principal; Legado Composto usa o menor HP, escolhe um +2, um +1 e uma perícia entre as duas origens, sem somar os dois kits.",
     "Regras de Legado e sacrifício do despertar mágico permanecem estruturadas; sacrifícios físicos podem levar FOR/DES/CON abaixo de zero."
   ]
 }

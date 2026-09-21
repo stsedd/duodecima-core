@@ -42,6 +42,14 @@ O workflow em `.github/workflows/validate.yml` também valida cada push.
 
 Nesta fase centralizamos primeiro o que realmente precisa sincronizar imediatamente entre os três produtos: deuses, perícias, talentos, condições e mecânicas comuns. Magia, Crafting e conteúdo editorial de Roma continuam no Guia por enquanto; depois que o pipeline estiver provado, podemos estruturá-los no Core também sem colocar tudo em risco de uma vez.
 
+## Atualização 21/09/2026
+
+As regras de criação de Legados agora estão estruturadas dentro de `system.lineage` para o Guia e a Ficha consumirem diretamente:
+
+- **Legado Direto:** HP inicial, bônus de atributos e perícia vêm do **deus principal**.
+- **Legado Composto:** usa o **menor HP** entre as duas origens; escolhe **1 bônus de +2** entre as duas opções de +2, **1 bônus de +1** entre as duas opções de +1 e **1 perícia inicial** entre as perícias concedidas pelas duas divindades.
+- O Legado Composto **não soma os bônus dos dois kits**; ele escolhe entre as opções disponíveis.
+
 ## Atualização 08/09/2026
 
 - Vis conjura por **Fé** e concede **Intimidação** como perícia divina inicial.

@@ -298,7 +298,26 @@
       "passiveReplacementsMax": 3,
       "activeReplacementsMax": 2,
       "activeReplacementSlotsMax": 5,
-      "activeReplacementLevelRule": "same-or-lower"
+      "activeReplacementLevelRule": "same-or-lower",
+      "creation": {
+        "hp": {
+          "mode": "lowestOfOrigins",
+          "text": "Use o menor HP inicial entre as duas divindades envolvidas."
+        },
+        "attributeBonuses": {
+          "mode": "chooseAcrossOrigins",
+          "plus2Choices": 1,
+          "plus1Choices": 1,
+          "text": "Escolha um dos bônus de +2 disponíveis entre as duas divindades e um dos bônus de +1 disponíveis entre elas."
+        },
+        "skill": {
+          "mode": "chooseAcrossOrigins",
+          "count": 1,
+          "text": "Escolha a perícia inicial entre as perícias concedidas por qualquer uma das duas divindades."
+        },
+        "doesNotStack": true,
+        "displayText": "No Legado Composto, compare as duas divindades envolvidas. Para o HP inicial, utilize sempre o menor valor entre as duas opções. Nos atributos, escolha um dos bônus de +2 disponíveis entre as duas divindades e um dos bônus de +1 disponíveis entre elas. A perícia inicial também pode ser escolhida entre as perícias concedidas por qualquer uma das duas divindades. Os bônus das duas fichas não são somados."
+      }
     },
     "direct": {
       "id": "direct",
@@ -307,7 +326,23 @@
       "description": "É filho de semideuses e carrega duas heranças divinas próximas.",
       "primaryPassives": 4,
       "secondaryPassives": 3,
-      "activeSlotsPerOrigin": 5
+      "activeSlotsPerOrigin": 5,
+      "creation": {
+        "baseOrigin": "primaryDeity",
+        "hp": {
+          "mode": "primaryDeity",
+          "text": "Use o HP inicial do deus principal."
+        },
+        "attributeBonuses": {
+          "mode": "primaryDeity",
+          "text": "Use os bônus de atributos do deus principal."
+        },
+        "skill": {
+          "mode": "primaryDeity",
+          "text": "Use a perícia inicial concedida pelo deus principal."
+        },
+        "displayText": "No Legado Direto, os atributos, o HP inicial e a perícia seguem normalmente o deus principal da personagem."
+      }
     }
   },
   "magicAwakening": {

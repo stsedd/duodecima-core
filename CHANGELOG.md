@@ -1,3 +1,9 @@
+## 2026-09-21 · v2026.09.21.1
+- Legado Direto: criação passa a usar HP inicial, bônus de atributos e perícia do deus principal.
+- Legado Composto: usa o menor HP entre as duas origens; escolhe 1 bônus de +2 e 1 bônus de +1 entre as duas opções disponíveis; escolhe também a perícia inicial entre as duas origens.
+- Legado Composto não soma os bônus dos dois kits; as escolhas são feitas entre as opções disponíveis.
+- As regras foram estruturadas em `system.lineage.*.creation` para consumo pelo Guia e pela Ficha.
+
 ## 2026-09-11 · v2026.09.11.1
 - Recursos divinos evoluíram para `resources[]`, mantendo `resource` legado para compatibilidade.
 - Netuno, Plutão e Summanus: limite de acúmulo padronizado com Iuppiter (`8 + floor(nível/10)`).

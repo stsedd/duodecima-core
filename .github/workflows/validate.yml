@@ -1,0 +1,38 @@
+name: Validate Duodecima Core
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Validate canonical data
+        run: node scripts/validate.mjs
+
+      - name: Generate balance audit
+        run: node scripts/audit-balance.mjs | tee balance-audit.txt
+
+      - name: Upload balance audit
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: balance-audit
+          path: balance-audit.txt
+          if-no-files-found: ignore

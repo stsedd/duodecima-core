@@ -1,11 +1,30 @@
 import fs from 'node:fs';
 import path from 'node:path';
+
 const root=path.resolve(path.dirname(new URL(import.meta.url).pathname),'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const m=read('manifest.json');
-const d=read(m.files.gods),s=read(m.files.skills),t=read(m.files.talents),c=read(m.files.conditions),a=read(m.files.aliases);
+const d=read(m.files.gods);
+const s=read(m.files.skills);
+const t=read(m.files.talents);
+const tp=read(m.files.talentPolicies);
+const c=read(m.files.conditions);
+const a=read(m.files.aliases);
+const system=read(m.files.system);
+const equipment=read(m.files.equipment);
+const origins=read(m.files.origins);
+const pantheons=read(m.files.pantheons);
 const errors=[];
-function unique(arr,label){const seen=new Set();for(const x of arr){if(seen.has(x.id))errors.push(`ID duplicado em ${label}: ${x.id}`);seen.add(x.id)}}
+const warnings=[];
+
+function unique(arr,label){
+  const seen=new Set();
+  for(const x of arr||[]){
+    if(!x?.id){errors.push(`${label} contém item sem id.`);continue;}
+    if(seen.has(x.id))errors.push(`ID duplicado em ${label}: ${x.id}`);
+    seen.add(x.id);
+  }
+}
 function deity(id){return d.deities.find(x=>x.id===id)}
 function ability(god,id){return [...(god?.passives||[]),...(god?.actives||[])].find(x=>x.id===id)}
 function resource(god,id){return (god?.resources||[]).find(x=>x.id===id)}
@@ -30,20 +49,54 @@ function validateChoices(ab,godId){
     if(typeof choice.choose==='number' && choice.choose<1) errors.push(`${godId}/${ab.id}/${choice.id} deve escolher ao menos 1 opção.`);
   }
 }
+function expectedAbilityCost(slot){
+  const row=(system.abilityEnergyCosts||[]).find(x=>(x.slots||[]).includes(Number(slot)));
+  return row?.cost ?? null;
+}
 
-unique(d.deities,'deuses');unique(s.skills,'perícias');unique(t.talents,'talentos');unique(c.conditions,'condições');
-if(d.deities.filter(x=>x.kitAvailable).length!==51) errors.push('Esperados 51 kits disponíveis.');
+unique(d.deities,'deuses');
+unique(s.skills,'perícias');
+unique(t.talents,'talentos');
+unique(c.conditions,'condições');
+unique(equipment.materials,'materiais');
+unique(equipment.armorTypes,'tipos de armadura');
+unique(equipment.weaponTypes,'tipos de arma');
+unique(equipment.craftingComponents,'componentes de crafting');
+unique(pantheons.groups,'grupos de panteão');
+
+const actualCounts={
+  deities:d.deities.length,
+  kits:d.deities.filter(x=>x.kitAvailable).length,
+  skills:s.skills.length,
+  talents:t.talents.length,
+  conditions:c.conditions.length
+};
+for(const [key,value] of Object.entries(actualCounts)){
+  if(Number(m.counts?.[key])!==value)errors.push(`manifest.counts.${key}=${m.counts?.[key]} mas o conteúdo possui ${value}.`);
+}
+if(actualCounts.kits!==51) errors.push('Esperados 51 kits disponíveis.');
 if(!deity('minerva')||deity('minerva').kitAvailable) errors.push('Minerva deve existir sem kit.');
+
 const skillIds=new Set(s.skills.map(x=>x.id));
+for(const skill of s.skills){
+  if(!String(skill.description||'').trim())errors.push(`Perícia sem descrição canônica: ${skill.id}`);
+  if(skill.documentationStatus!=='documented')warnings.push(`Perícia ainda não marcada como documented: ${skill.id}`);
+}
+
 const validScopes=new Set(['personal','collective','target','ability']);
 const validMaxTypes=new Set(['fixed','levelFormula','stakeProgression','described']);
 for(const god of d.deities){
   for(const id of [...(god.grantedSkills||[]),...(god.skillChoices||[])]) if(!skillIds.has(id)) errors.push(`${god.id} referencia perícia inexistente: ${id}`);
   const ids=new Set();
   for(const ab of [...(god.passives||[]),...(god.actives||[])]){
-    if(ids.has(ab.id)) errors.push(`${god.id} tem habilidade duplicada: ${ab.id}`); ids.add(ab.id);
+    if(ids.has(ab.id)) errors.push(`${god.id} tem habilidade duplicada: ${ab.id}`);
+    ids.add(ab.id);
     for(const effect of ab.skillEffects||[]) validateSkillEffect(effect,god.id,ab.id);
     validateChoices(ab,god.id);
+    if(ab.slot!=null&&ab.cost!=null){
+      const expected=expectedAbilityCost(ab.slot);
+      if(expected!=null&&Number(ab.cost)!==Number(expected))warnings.push(`${god.id}/${ab.id}: custo ${ab.cost} difere do padrão ${expected} da habilidade ${ab.slot}.`);
+    }
   }
   const resourceIds=new Set();
   for(const r of god.resources||[]){
@@ -57,6 +110,30 @@ for(const god of d.deities){
     if(r.max?.type==='stakeProgression' && !Array.isArray(r.max.progression)) errors.push(`${god.id}/${r.id} max stakeProgression precisa de progression.`);
   }
 }
+
+const talentIds=new Set(t.talents.map(x=>x.id));
+const validStackModes=new Set(['unique','additive','parameterized','non-cumulative-repeat']);
+for(const talent of t.talents){
+  const policy=tp.policies?.[talent.id];
+  if(!policy)errors.push(`Talento sem política de acumulação: ${talent.id}`);
+  else if(!validStackModes.has(policy.mode))errors.push(`Política de acumulação inválida em ${talent.id}: ${policy.mode}`);
+  if(talent.repeatable===false&&policy?.mode!=='unique')errors.push(`${talent.id} não é repetível, mas sua política não é unique.`);
+  if(talent.repeatable!==false&&policy?.mode==='unique')errors.push(`${talent.id} é repetível, mas sua política está unique.`);
+}
+for(const id of Object.keys(tp.policies||{}))if(!talentIds.has(id))errors.push(`Política de talento aponta para talento inexistente: ${id}`);
+
+for(const material of equipment.materials||[]){
+  if(!material.targeting||!Array.isArray(material.targeting.ineffectiveAgainst)||!String(material.targeting.ruleText||'').trim()){
+    errors.push(`Material sem regra estruturada de alvo: ${material.id}`);
+  }
+}
+const bronze=(equipment.materials||[]).find(x=>x.id==='bronze-celestial');
+if(!bronze?.targeting?.ineffectiveAgainst?.includes('mortal'))errors.push('Bronze Celestial deve declarar mortal como alvo ineficaz.');
+const monsterDust=(equipment.craftingComponents||[]).find(x=>x.id==='po-de-monstro');
+if(!monsterDust||monsterDust.ordinaryCreaturesGenerate!==false||monsterDust.sourceClassification!=='mitologico-tartaro')errors.push('Pó de Monstro deve estar estruturado como material mitológico ligado ao Tártaro e não ser gerado por criaturas comuns.');
+
+const celt=origins?.foreigners?.origins?.find(x=>x.id==='celta');
+if(!celt||celt.status!=='allowed'||celt.mayAppearAsForeigner!==true)errors.push('Celtas devem estar liberados como estrangeiros.');
 
 // Regras canônicas e invariantes desta versão.
 const iuppiter=deity('iuppiter');
@@ -106,10 +183,10 @@ if(resource(deity('victoria'),'momentum-triunfal')?.scope!=='ability') errors.pu
 const vis=deity('vis');
 if(vis?.castingAttribute!=='fe') errors.push('Vis deve conjurar com Fé.');
 if(!(vis?.grantedSkills||[]).includes('intimidacao')) errors.push('Vis deve conceder Intimidação como perícia divina inicial.');
-const lineage=m.files.system?read(m.files.system).lineage:null;
+const lineage=system.lineage;
 if(!lineage?.compound||lineage.compound.formula!=='DEUS + LEGADO') errors.push('Regra de Legado Composto ausente/incorreta.');
 if(!lineage?.direct||lineage.direct.formula!=='LEGADO + LEGADO') errors.push('Regra de Legado Direto ausente/incorreta.');
-const magicAwakening=m.files.system?read(m.files.system).magicAwakening:null;
+const magicAwakening=system.magicAwakening;
 if(magicAwakening?.canReduceBelowZero!==true) errors.push('Sacrifício mágico deve permitir atributo físico abaixo de 0.');
 const vul=deity('vulcano'), auto=ability(vul,'automato');
 const variants=auto?.blocks?.find(x=>x.type==='variants')?.items||[];
@@ -117,6 +194,9 @@ if(variants.length!==3) errors.push('Vulcano/Autômato deve ter 3 chassis estrut
 if((auto?.tiers||[]).length) errors.push('Autômato não deve ter estacas globais; pertencem aos chassis.');
 
 if(m.schemaVersion!==2||d.schemaVersion!==2) errors.push('Manifest e deuses.json devem declarar schemaVersion 2.');
+if(equipment.schemaVersion!==2) errors.push('equipamentos.json deve declarar schemaVersion 2.');
+
+if(warnings.length)console.warn('⚠️ Avisos de auditoria\n- '+warnings.join('\n- '));
 if(errors.length){console.error('❌ Core inválido\n- '+errors.join('\n- '));process.exit(1)}
 console.log('✅ Duodécima Core válido');
 console.log(`   schema v${m.schemaVersion} · conteúdo ${m.contentVersion}`);
@@ -125,4 +205,7 @@ console.log(`   ${s.skills.length} perícias · ${t.talents.length} talentos · 
 console.log('   Acúmulos equivalentes a Iuppiter: Netuno, Plutão, Summanus');
 console.log('   Recursos v2: pessoal, coletivo, alvo e habilidade');
 console.log('   Escolhas persistentes e skillEffects: validados');
+console.log('   Materiais: restrições de alvo e Pó de Monstro validados');
+console.log('   Origens: Celtas liberados como estrangeiros');
+console.log('   Talentos: política de acumulação completa');
 console.log('   Vulcano/Autômato: '+variants.map(x=>x.name).join(', '));

@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-22",
+  "foreigners": {
+    "id": "estrangeiros",
+    "label": "Estrangeiros",
+    "description": "Personagens de origens não romanas podem aparecer em Roma como estrangeiros quando a proposta de personagem permitir.",
+    "origins": [
+      {
+        "id": "celta",
+        "name": "Celta",
+        "status": "allowed",
+        "mayAppearAsForeigner": true,
+        "ruleText": "Personagens celtas estão liberados e podem aparecer como estrangeiros."
+      }
+    ]
+  }
+}

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-04",
+  "updatedAt": "2026-09-22",
   "count": 26,
   "skills": [
     {
@@ -105,8 +105,8 @@
       "id": "estrategia",
       "name": "Estratégia",
       "attribute": "int",
-      "description": null,
-      "documentationStatus": "used-in-current-kits"
+      "description": "Planejamento de longo prazo, avaliação de riscos, coordenação de recursos e antecipação de movimentos adversários.",
+      "documentationStatus": "documented"
     },
     {
       "id": "conhecimento-religioso",
@@ -182,8 +182,8 @@
       "id": "enganacao",
       "name": "Enganação",
       "attribute": "car",
-      "description": null,
-      "documentationStatus": "used-in-current-kits"
+      "description": "Criar histórias falsas, disfarçar intenções, sustentar blefes e induzir outros ao erro por fala ou comportamento.",
+      "documentationStatus": "documented"
     }
   ]
 }

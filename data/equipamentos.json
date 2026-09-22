@@ -1,5 +1,6 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "updatedAt": "2026-09-22",
   "materials": [
     {
       "id": "ferro-aco",
@@ -7,7 +8,11 @@
       "attack": 0,
       "resistance": 3,
       "unbreakable": false,
-      "armorHint": "Leve"
+      "armorHint": "Leve",
+      "targeting": {
+        "ineffectiveAgainst": [],
+        "ruleText": "Sem restrição especial de alvo definida pelo material."
+      }
     },
     {
       "id": "mithril",
@@ -15,7 +20,11 @@
       "attack": 1,
       "resistance": 2,
       "unbreakable": false,
-      "armorHint": "Defensiva"
+      "armorHint": "Defensiva",
+      "targeting": {
+        "ineffectiveAgainst": [],
+        "ruleText": "Sem restrição especial de alvo definida pelo material."
+      }
     },
     {
       "id": "bronze-celestial",
@@ -23,7 +32,13 @@
       "attack": 1,
       "resistance": 4,
       "unbreakable": false,
-      "armorHint": "Defensiva"
+      "armorHint": "Defensiva",
+      "targeting": {
+        "ineffectiveAgainst": [
+          "mortal"
+        ],
+        "ruleText": "Bronze Celestial não afeta criaturas mortais."
+      }
     },
     {
       "id": "uro",
@@ -31,7 +46,11 @@
       "attack": 2,
       "resistance": 5,
       "unbreakable": false,
-      "armorHint": "Responsiva"
+      "armorHint": "Responsiva",
+      "targeting": {
+        "ineffectiveAgainst": [],
+        "ruleText": "Sem restrição especial de alvo definida pelo material."
+      }
     },
     {
       "id": "ouro-imperial",
@@ -39,7 +58,11 @@
       "attack": 3,
       "resistance": null,
       "unbreakable": true,
-      "armorHint": "Sem armadura/escudo complexo"
+      "armorHint": "Sem armadura/escudo complexo",
+      "targeting": {
+        "ineffectiveAgainst": [],
+        "ruleText": "Sem restrição especial de alvo definida pelo material."
+      }
     },
     {
       "id": "ferro-estigio",
@@ -47,7 +70,21 @@
       "attack": 3,
       "resistance": null,
       "unbreakable": true,
-      "armorHint": "Não é normalmente forjável"
+      "armorHint": "Não é normalmente forjável",
+      "targeting": {
+        "ineffectiveAgainst": [],
+        "ruleText": "Sem restrição especial de alvo definida pelo material."
+      }
+    }
+  ],
+  "craftingComponents": [
+    {
+      "id": "po-de-monstro",
+      "name": "Pó de Monstro",
+      "category": "material-mitologico",
+      "sourceClassification": "mitologico-tartaro",
+      "sourceRule": "Só pode ser obtido de monstros mitológicos sujeitos ao ciclo de retorno pelo Tártaro. Criaturas mortais, comuns ou não mitológicas não geram Pó de Monstro.",
+      "ordinaryCreaturesGenerate": false
     }
   ],
   "armorTypes": [

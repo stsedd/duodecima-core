@@ -1,8 +1,8 @@
 {
   "core": "Duodécima Core",
   "schemaVersion": 2,
-  "contentVersion": "2026.09.21.1",
-  "updatedAt": "2026-09-21",
+  "contentVersion": "2026.09.22.1",
+  "updatedAt": "2026-09-22",
   "status": "canonical-phase-2",
   "counts": {
     "deities": 52,
@@ -15,8 +15,10 @@
     "attributes": "data/atributos.json",
     "skills": "data/pericias.json",
     "talents": "data/talentos.json",
+    "talentPolicies": "data/talento-acumulo.json",
     "conditions": "data/condicoes.json",
     "pantheons": "data/panteoes.json",
+    "origins": "data/origens.json",
     "gods": "data/deuses.json",
     "system": "data/sistema.json",
     "equipment": "data/equipamentos.json",
@@ -33,6 +35,11 @@
     "Herança Monstruosa de Cimopoleia recupera Scaleskin, Dentes de Tubarão e Shimmerskin.",
     "Vis: conjuração por Fé e perícia divina inicial Intimidação.",
     "Legado Direto usa HP, bônus de atributos e perícia do deus principal; Legado Composto usa o menor HP, escolhe um +2, um +1 e uma perícia entre as duas origens, sem somar os dois kits.",
-    "Regras de Legado e sacrifício do despertar mágico permanecem estruturadas; sacrifícios físicos podem levar FOR/DES/CON abaixo de zero."
+    "Regras de Legado e sacrifício do despertar mágico permanecem estruturadas; sacrifícios físicos podem levar FOR/DES/CON abaixo de zero.",
+    "Celtas estão liberados e podem aparecer como estrangeiros; a regra está estruturada em data/origens.json.",
+    "Bronze Celestial não afeta criaturas mortais; restrições de alvo dos materiais estão estruturadas em data/equipamentos.json.",
+    "Pó de Monstro é material de procedência mitológica ligado ao ciclo do Tártaro; criaturas comuns ou mortais não o geram.",
+    "Estratégia e Enganação agora possuem descrições canônicas completas.",
+    "A política de repetição e acumulação de todos os talentos está explicitada em data/talento-acumulo.json."
   ]
 }

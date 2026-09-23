@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "circles": [
+    {"circle": 1, "minLevel": 1, "cost": 20},
+    {"circle": 2, "minLevel": 10, "cost": 45},
+    {"circle": 3, "minLevel": 20, "cost": 70},
+    {"circle": 4, "minLevel": 30, "cost": 95},
+    {"circle": 5, "minLevel": 40, "cost": 120},
+    {"circle": 6, "minLevel": 50, "cost": 150, "uses": 2},
+    {"circle": 7, "minLevel": 60, "cost": 185, "uses": 2},
+    {"circle": 8, "minLevel": 75, "cost": 225, "uses": 1},
+    {"circle": 9, "minLevel": 90, "cost": 270, "uses": 1}
+  ],
+  "cantripCost": 0,
+  "ritualMinutes": 10,
+  "startingCantrips": 2,
+  "startingSpells": 3,
+  "castingAttributes": ["int", "fe", "car"],
+  "awakening": {
+    "sacrificialAttributes": ["for", "des", "con"],
+    "maxSacrifices": 3,
+    "sacrificeEnergyEach": 25,
+    "canReduceBelowZero": true,
+    "divineBonusesSacrificable": false,
+    "hpProgressionPenalty": 2
+  },
+  "highCircleUses": {"6": 2, "7": 2, "8": 1, "9": 1},
+  "combat": {
+    "circleSpellsPerTurn": 1,
+    "defaultActions": 1,
+    "fullTurnActions": 2,
+    "fullTurnSpells": ["Fireball", "Lightning Bolt"]
+  },
+  "durationGuidance": {
+    "defaultFormerOneMinuteTurns": 3,
+    "strongControlTurns": 2
+  },
+  "notes": [
+    "O custo é definido pelo círculo utilizado; truques custam 0 Energia.",
+    "Fireball e Lightning Bolt usam o turno completo quando conjurados.",
+    "Efeitos anteriormente descritos como 1 minuto passam, em regra, a 3 turnos; controles fortes podem usar 2 turnos.",
+    "No despertar, cada ponto retirado de FOR, DES ou CON concede +25 de Energia máxima, até 3 pontos no total."
+  ]
+}

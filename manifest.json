@@ -1,7 +1,7 @@
 {
   "core": "Duodécima Core",
   "schemaVersion": 2,
-  "contentVersion": "2026.09.22.1",
+  "contentVersion": "2026.09.22.2",
   "updatedAt": "2026-09-22",
   "status": "canonical-phase-2",
   "counts": {
@@ -22,7 +22,8 @@
     "gods": "data/deuses.json",
     "system": "data/sistema.json",
     "equipment": "data/equipamentos.json",
-    "aliases": "data/aliases.json"
+    "aliases": "data/aliases.json",
+    "magic": "data/magia.json"
   },
   "notes": [
     "Fase 2 adiciona resources[] compatível com resource legado, incluindo recursos pessoais, coletivos, por alvo e locais de habilidade.",
@@ -40,6 +41,8 @@
     "Bronze Celestial não afeta criaturas mortais; restrições de alvo dos materiais estão estruturadas em data/equipamentos.json.",
     "Pó de Monstro é material de procedência mitológica ligado ao ciclo do Tártaro; criaturas comuns ou mortais não o geram.",
     "Estratégia e Enganação agora possuem descrições canônicas completas.",
-    "A política de repetição e acumulação de todos os talentos está explicitada em data/talento-acumulo.json."
+    "A política de repetição e acumulação de todos os talentos está explicitada em data/talento-acumulo.json.",
+    "Magia passa a ter fonte estruturada em data/magia.json. Custos finais por círculo: 20, 45, 70, 95, 120, 150, 185, 225 e 270 Energia; truques custam 0.",
+    "No despertar mágico, cada −1 em FOR, DES ou CON concede +25 Energia máxima, até 3 pontos no total; bônus divinos não são sacrificáveis."
   ]
 }

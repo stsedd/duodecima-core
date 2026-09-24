@@ -27673,11 +27673,7 @@
       "selectable": true,
       "source": "Guia consolidado · 04/09/2026",
       "castingAttribute": "fe",
-      "hp": {
-        "base": 30,
-        "perDecade": 5,
-        "constitutionApplies": true
-      },
+      "hp": {"base":30,"perDecade":5,"constitutionApplies":true},
       "attributeBonuses": {
         "for": 2,
         "con": 1

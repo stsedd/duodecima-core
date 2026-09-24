@@ -1,0 +1,59 @@
+name: Patch Vis HP
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-vis-hp.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Patch canonical Vis HP
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          import re
+          from pathlib import Path
+
+          gods_path = Path('data/deuses.json')
+          text = gods_path.read_text(encoding='utf-8')
+          match = re.search(r'("id"\s*:\s*"vis"[\s\S]{0,2500}?"hp"\s*:\s*)\{[^{}]*\}', text)
+          if not match:
+              raise SystemExit('Vis HP block not found in data/deuses.json')
+
+          replacement = match.group(1) + '{"base":30,"perDecade":5,"constitutionApplies":true}'
+          patched = text[:match.start()] + replacement + text[match.end():]
+          gods_path.write_text(patched, encoding='utf-8')
+
+          manifest_path = Path('manifest.json')
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          manifest['contentVersion'] = '2026.09.24.1'
+          manifest['updatedAt'] = '2026-09-24'
+          note = 'Vis: HP inicial 30 + Constituição; a cada 10 níveis, +5 + Constituição no HP máximo.'
+          notes = manifest.setdefault('notes', [])
+          if note not in notes:
+              notes.append(note)
+          manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Commit canonical fix
+        shell: bash
+        run: |
+          git config user.name 'duodecima-maintenance'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/deuses.json manifest.json
+          if git diff --cached --quiet; then
+            echo 'No changes needed.'
+            exit 0
+          fi
+          git commit -m 'Fix Vis HP progression'
+          git push

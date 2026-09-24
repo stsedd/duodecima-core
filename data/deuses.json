@@ -27673,7 +27673,11 @@
       "selectable": true,
       "source": "Guia consolidado · 04/09/2026",
       "castingAttribute": "fe",
-      "hp": {"base":30,"perDecade":5,"constitutionApplies":true},
+      "hp": {
+        "base": 30,
+        "perDecade": 5,
+        "constitutionApplies": true
+      },
       "attributeBonuses": {
         "for": 2,
         "con": 1
@@ -46548,25 +46552,22 @@
               "id": "0-15",
               "min": 0,
               "max": 15,
-              "label": "0–15",
-              "text": "abençoa 1 criatura por 2 rodadas. Sempre que fizer ataque ou resistência, pode somar 1d4 ao resultado."
+              "text": "Abençoa 1 criatura por 2 rodadas. Sempre que fizer uma rolagem de ataque ou resistência, pode somar 1d4 ao resultado."
             },
             {
               "id": "16-29",
               "min": 16,
               "max": 29,
-              "label": "16–29",
-              "text": "afeta até 2 criaturas por 3 rodadas."
+              "text": "Pode abençoar até 2 criaturas por 3 rodadas. Sempre que fizerem uma rolagem de ataque ou resistência, podem somar 1d4 ao resultado."
             },
             {
               "id": "30+",
               "min": 30,
               "max": null,
-              "label": "30+",
-              "text": "afeta até 3 criaturas por 3 rodadas. Não pode estar ativa ao mesmo tempo que Mau Agouro."
+              "text": "Pode abençoar até 3 criaturas por 3 rodadas. Sempre que fizerem uma rolagem de ataque ou resistência, podem somar 1d4 ao resultado."
             }
           ],
-          "note": "",
+          "note": "Bênção da Boa Hora não pode estar ativa ao mesmo tempo que Mau Agouro.",
           "blocks": [
             {
               "type": "description",

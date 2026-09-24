@@ -1,0 +1,85 @@
+name: Patch Fortuna Blessing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/patch-fortuna-bencao.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Patch Bênção da Boa Hora
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          gods_path = Path('data/deuses.json')
+          data = json.loads(gods_path.read_text(encoding='utf-8'))
+          fortuna = next((d for d in data.get('deities', []) if d.get('id') == 'fortuna'), None)
+          if not fortuna:
+              raise SystemExit('Fortuna not found')
+
+          ability = next((a for a in fortuna.get('actives', []) if a.get('name') == 'Bênção da Boa Hora'), None)
+          if not ability:
+              raise SystemExit('Bênção da Boa Hora not found')
+
+          ability['summary'] = 'Por alguns instantes, tudo parece acontecer no segundo exato em que deveria.'
+          ability['tiers'] = [
+              {
+                  'id': '0-15',
+                  'min': 0,
+                  'max': 15,
+                  'text': 'Abençoa 1 criatura por 2 rodadas. Sempre que fizer uma rolagem de ataque ou resistência, pode somar 1d4 ao resultado.'
+              },
+              {
+                  'id': '16-29',
+                  'min': 16,
+                  'max': 29,
+                  'text': 'Pode abençoar até 2 criaturas por 3 rodadas. Sempre que fizerem uma rolagem de ataque ou resistência, podem somar 1d4 ao resultado.'
+              },
+              {
+                  'id': '30+',
+                  'min': 30,
+                  'max': None,
+                  'text': 'Pode abençoar até 3 criaturas por 3 rodadas. Sempre que fizerem uma rolagem de ataque ou resistência, podem somar 1d4 ao resultado.'
+              }
+          ]
+          ability['note'] = 'Bênção da Boa Hora não pode estar ativa ao mesmo tempo que Mau Agouro.'
+          gods_path.write_text(json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+
+          manifest_path = Path('manifest.json')
+          manifest = json.loads(manifest_path.read_text(encoding='utf-8'))
+          manifest['contentVersion'] = '2026.09.24.2'
+          manifest['updatedAt'] = '2026-09-24'
+          note = 'Fortuna: Bênção da Boa Hora dura 2 rodadas em 0–15 e 3 rodadas em 16–29/30+, afetando 1/2/3 criaturas e concedendo +1d4 em ataques e resistências; incompatível com Mau Agouro.'
+          notes = manifest.setdefault('notes', [])
+          if note not in notes:
+              notes.append(note)
+          manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          PY
+
+      - name: Validate
+        run: node scripts/validate.mjs
+
+      - name: Commit canonical fix
+        shell: bash
+        run: |
+          git config user.name 'duodecima-maintenance'
+          git config user.email 'actions@users.noreply.github.com'
+          git add data/deuses.json manifest.json
+          if git diff --cached --quiet; then
+            echo 'No changes needed.'
+            exit 0
+          fi
+          git commit -m 'Update Fortuna blessing'
+          git push

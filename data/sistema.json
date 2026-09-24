@@ -293,12 +293,12 @@
     "compound": {
       "id": "compound",
       "label": "Legado Composto",
-      "formula": "DEUS + LEGADO",
-      "description": "É filho direto de um deus, mas também carrega uma herança divina secundária.",
-      "passiveReplacementsMax": 3,
-      "activeReplacementsMax": 2,
-      "activeReplacementSlotsMax": 5,
-      "activeReplacementLevelRule": "same-or-lower",
+      "formula": "LEGADO + LEGADO",
+      "description": "É filho de semideuses e carrega duas heranças divinas próximas.",
+      "primaryPassives": 4,
+      "secondaryPassives": 3,
+      "activeSlotsPerOrigin": 5,
+      "abilitiesAboveFive": false,
       "creation": {
         "hp": {
           "mode": "lowestOfOrigins",
@@ -322,11 +322,12 @@
     "direct": {
       "id": "direct",
       "label": "Legado Direto",
-      "formula": "LEGADO + LEGADO",
-      "description": "É filho de semideuses e carrega duas heranças divinas próximas.",
-      "primaryPassives": 4,
-      "secondaryPassives": 3,
-      "activeSlotsPerOrigin": 5,
+      "formula": "DEUS + LEGADO",
+      "description": "É filho direto de um deus, mas também carrega uma herança divina secundária.",
+      "passiveReplacementsMax": 3,
+      "activeReplacementsMax": 2,
+      "activeReplacementSlotsMax": 5,
+      "activeReplacementLevelRule": "same-or-lower",
       "creation": {
         "baseOrigin": "primaryDeity",
         "hp": {

@@ -1,0 +1,99 @@
+name: Fix lineage semantics
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '.github/workflows/fix-lineage-semantics.yml'
+permissions:
+  contents: write
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Correct canonical lineage definitions
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p=Path('data/sistema.json')
+          data=json.loads(p.read_text())
+          data['lineage']['direct']={
+            'id':'direct',
+            'label':'Legado Direto',
+            'formula':'DEUS + LEGADO',
+            'description':'É filho direto de um deus, mas também carrega uma herança divina secundária.',
+            'passiveReplacementsMax':3,
+            'activeReplacementsMax':2,
+            'activeReplacementSlotsMax':5,
+            'activeReplacementLevelRule':'same-or-lower',
+            'creation':{
+              'baseOrigin':'primaryDeity',
+              'hp':{'mode':'primaryDeity','text':'Use o HP inicial do deus principal.'},
+              'attributeBonuses':{'mode':'primaryDeity','text':'Use os bônus de atributos do deus principal.'},
+              'skill':{'mode':'primaryDeity','text':'Use a perícia inicial concedida pelo deus principal.'},
+              'displayText':'No Legado Direto, os atributos, o HP inicial e a perícia seguem normalmente o deus principal da personagem.'
+            }
+          }
+          data['lineage']['compound']={
+            'id':'compound',
+            'label':'Legado Composto',
+            'formula':'LEGADO + LEGADO',
+            'description':'É filho de semideuses e carrega duas heranças divinas próximas.',
+            'primaryPassives':4,
+            'secondaryPassives':3,
+            'activeSlotsPerOrigin':5,
+            'abilitiesAboveFive':False,
+            'creation':{
+              'hp':{'mode':'lowestOfOrigins','text':'Use o menor HP inicial entre as duas divindades envolvidas.'},
+              'attributeBonuses':{
+                'mode':'chooseAcrossOrigins','plus2Choices':1,'plus1Choices':1,
+                'text':'Escolha um dos bônus de +2 disponíveis entre as duas divindades e um dos bônus de +1 disponíveis entre elas.'
+              },
+              'skill':{
+                'mode':'chooseAcrossOrigins','count':1,
+                'text':'Escolha a perícia inicial entre as perícias concedidas por qualquer uma das duas divindades.'
+              },
+              'doesNotStack':True,
+              'displayText':'No Legado Composto, compare as duas divindades envolvidas. Para o HP inicial, utilize sempre o menor valor entre as duas opções. Nos atributos, escolha um dos bônus de +2 disponíveis entre as duas divindades e um dos bônus de +1 disponíveis entre elas. A perícia inicial também pode ser escolhida entre as perícias concedidas por qualquer uma das duas divindades. Os bônus das duas fichas não são somados.'
+            }
+          }
+          p.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n')
+
+          m=Path('manifest.json')
+          manifest=json.loads(m.read_text())
+          manifest['contentVersion']='2026.09.24.3'
+          lineage_note='Legado Direto = DEUS + LEGADO: mantém o kit do deus principal e pode trocar até 3 passivas e 2 das cinco primeiras ativas; HP, atributos e perícia inicial seguem o deus principal. Legado Composto = LEGADO + LEGADO: usa 4 passivas de uma origem + 3 da outra, as cinco primeiras ativas de ambas, sem habilidades 6+, menor HP inicial e escolhas de +2, +1 e perícia entre as duas origens.'
+          notes=manifest.setdefault('notes',[])
+          notes=[n for n in notes if not n.startswith('Legado Direto usa HP')]
+          notes.append(lineage_note)
+          manifest['notes']=notes
+          m.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - name: Validate JSON and lineage semantics
+        run: |
+          python -m json.tool data/sistema.json >/dev/null
+          python -m json.tool manifest.json >/dev/null
+          python - <<'PY'
+          import json
+          d=json.load(open('data/sistema.json'))['lineage']
+          assert d['direct']['formula']=='DEUS + LEGADO'
+          assert d['direct']['passiveReplacementsMax']==3
+          assert d['direct']['creation']['hp']['mode']=='primaryDeity'
+          assert d['compound']['formula']=='LEGADO + LEGADO'
+          assert d['compound']['primaryPassives']==4
+          assert d['compound']['creation']['hp']['mode']=='lowestOfOrigins'
+          assert d['compound']['abilitiesAboveFive'] is False
+          PY
+      - name: Commit canonical fix
+        run: |
+          git config user.name 'Legio Fulminata'
+          git config user.email '131549072+stsedd@users.noreply.github.com'
+          git add data/sistema.json manifest.json
+          git diff --cached --check
+          git commit -m 'Correct direct and compound lineage semantics'
+          git push

@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-09-04",
-  "count": 27,
+  "updatedAt": "2026-09-25",
+  "count": 28,
   "stackingRule": "Condições são estados temporários. Se várias se aplicarem, seus efeitos se acumulam; se entrarem em conflito, aplique o mais severo.",
   "conditions": [
     {
@@ -102,10 +102,20 @@
       "automation": {}
     },
     {
+      "id": "indefeso",
+      "name": "Indefeso",
+      "description": "Sem conseguir se defender. O alvo não rola mais testes de Defesa; em vez disso, a Defesa / CA padrão de um alvo indefeso é 5.",
+      "automation": {
+        "fixedDefense": 5
+      }
+    },
+    {
       "id": "inconsciente",
       "name": "Inconsciente",
       "description": "Fica indefesa e incapaz de agir. Ataques corpo a corpo contra uma criatura inconsciente são considerados acertos críticos.",
-      "automation": {}
+      "automation": {
+        "fixedDefense": 5
+      }
     },
     {
       "id": "incorporeo",
@@ -134,7 +144,7 @@
     {
       "id": "paralisado",
       "name": "Paralisado",
-      "description": "Fica indefeso e incapaz de se mover. Força e Destreza efetivas passam a −1, mas ações puramente mentais ainda são possíveis. A Defesa é 5.",
+      "description": "Fica indefeso e incapaz de se mover. Força e Destreza efetivas passam a −1, mas ações puramente mentais ainda são possíveis.",
       "automation": {
         "fixedDefense": 5
       }

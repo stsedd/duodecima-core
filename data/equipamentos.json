@@ -1,139 +1,37 @@
 {
-  "schemaVersion": 2,
-  "updatedAt": "2026-09-22",
+  "schemaVersion": 3,
+  "updatedAt": "2026-09-27",
   "materials": [
-    {
-      "id": "ferro-aco",
-      "name": "Ferro / Aço",
-      "attack": 0,
-      "resistance": 3,
-      "unbreakable": false,
-      "armorHint": "Leve",
-      "targeting": {
-        "ineffectiveAgainst": [],
-        "ruleText": "Sem restrição especial de alvo definida pelo material."
-      }
-    },
-    {
-      "id": "mithril",
-      "name": "Mithril",
-      "attack": 1,
-      "resistance": 2,
-      "unbreakable": false,
-      "armorHint": "Defensiva",
-      "targeting": {
-        "ineffectiveAgainst": [],
-        "ruleText": "Sem restrição especial de alvo definida pelo material."
-      }
-    },
-    {
-      "id": "bronze-celestial",
-      "name": "Bronze Celestial",
-      "attack": 1,
-      "resistance": 4,
-      "unbreakable": false,
-      "armorHint": "Defensiva",
-      "targeting": {
-        "ineffectiveAgainst": [
-          "mortal"
-        ],
-        "ruleText": "Bronze Celestial não afeta criaturas mortais."
-      }
-    },
-    {
-      "id": "uro",
-      "name": "Uro",
-      "attack": 2,
-      "resistance": 5,
-      "unbreakable": false,
-      "armorHint": "Responsiva",
-      "targeting": {
-        "ineffectiveAgainst": [],
-        "ruleText": "Sem restrição especial de alvo definida pelo material."
-      }
-    },
-    {
-      "id": "ouro-imperial",
-      "name": "Ouro Imperial",
-      "attack": 3,
-      "resistance": null,
-      "unbreakable": true,
-      "armorHint": "Sem armadura/escudo complexo",
-      "targeting": {
-        "ineffectiveAgainst": [],
-        "ruleText": "Sem restrição especial de alvo definida pelo material."
-      }
-    },
-    {
-      "id": "ferro-estigio",
-      "name": "Ferro Estígio",
-      "attack": 3,
-      "resistance": null,
-      "unbreakable": true,
-      "armorHint": "Não é normalmente forjável",
-      "targeting": {
-        "ineffectiveAgainst": [],
-        "ruleText": "Sem restrição especial de alvo definida pelo material."
-      }
-    }
+    {"id":"ferro-aco","name":"Ferro / Aço","attack":0,"resistance":3,"unbreakable":false,"armorHint":"Leve","blueprint":"simples","description":"Material básico e acessível, usado em treinos, armas simples e primeiras tentativas de forja.","targeting":{"canHarm":["mortal","nao-mitologico"],"cannotHarm":[],"ruleText":"Eficaz contra mortais e criaturas não mitológicas; não possui propriedade sagrada contra monstros mitológicos."}},
+    {"id":"mithril","name":"Mithril","attack":1,"resistance":2,"unbreakable":false,"armorHint":"Defensiva","blueprint":"simples","description":"Metal leve e gélido, capaz de atingir criaturas fantasmagóricas e não mitológicas.","targeting":{"canHarm":["fantasmagorico","nao-mitologico"],"cannotHarm":[],"ruleText":"Consegue ferir criaturas fantasmagóricas e não mitológicas."}},
+    {"id":"bronze-celestial","name":"Bronze Celestial","attack":1,"resistance":4,"unbreakable":false,"armorHint":"Defensiva","blueprint":"mediana","description":"Metal sagrado característico dos semideuses gregos.","targeting":{"canHarm":["monstro-mitologico","monstro-nao-mitologico","espirito","sobrenatural-nao-mortal"],"cannotHarm":["mortal"],"canKillMythologicalMonsters":true,"canKillNonMythologicalMonsters":true,"ruleText":"Mata monstros mitológicos e não mitológicos e pode ferir outras criaturas sobrenaturais, como espíritos. Não causa dano algum a mortais."}},
+    {"id":"uro","name":"Uro","attack":2,"resistance":5,"unbreakable":false,"armorHint":"Responsiva","blueprint":"mediana","description":"Metal exógeno, expansivo e muito resistente, mágico mas não sacro.","targeting":{"canHarm":["mortal","nao-mitologico"],"cannotHarm":[],"ruleText":"Fere mortais e criaturas não mitológicas; não é um metal sacro."}},
+    {"id":"ouro-imperial","name":"Ouro Imperial","attack":3,"resistance":null,"unbreakable":true,"armorHint":"Não produz armaduras","blueprint":"complexa","description":"Metal divino romano, feito com icor dos deuses e tradicionalmente banhado no Lethe.","targeting":{"canHarm":["mitologico","tita","divindade"],"cannotHarm":[],"ruleText":"Consegue ferir seres mitológicos, Titãs e divindades."},"forgingRisk":{"rawD20AtOrBelow":8,"ignoreBonusesForTrigger":true,"consequenceRoll":"1d100","affectsHelpers":true,"natural1Failures":2,"ruleText":"Ao rolar 8 ou menos no d20 bruto durante a forja, marque a Administração e role 1d100 para determinar o que o ferreiro e quem estiver ajudando perdem de si no processo. Um 1 natural conta como duas falhas."}},
+    {"id":"ferro-estigio","name":"Ferro Estígio","attack":3,"resistance":null,"unbreakable":true,"armorHint":"Não produz armaduras","blueprint":"nao-forjavel","description":"Metal cruel ligado à fragmentação e aprisionamento de almas.","targeting":{"canHarm":["mortal","monstro"],"cannotHarm":[],"ruleText":"Fere mortais e monstros diversos; criaturas mortas por ele sofrem efeitos especiais sobre a alma conforme a narrativa."}}
   ],
-  "craftingComponents": [
-    {
-      "id": "po-de-monstro",
-      "name": "Pó de Monstro",
-      "category": "material-mitologico",
-      "sourceClassification": "mitologico-tartaro",
-      "sourceRule": "Só pode ser obtido de monstros mitológicos sujeitos ao ciclo de retorno pelo Tártaro. Criaturas mortais, comuns ou não mitológicas não geram Pó de Monstro.",
-      "ordinaryCreaturesGenerate": false
+  "craftingComponents": [{"id":"po-de-monstro","name":"Pó de Monstro","category":"material-mitologico","sourceClassification":"mitologico-tartaro","sourceRule":"Só pode ser obtido de monstros mitológicos sujeitos ao ciclo de retorno pelo Tártaro. Criaturas mortais, comuns ou não mitológicas não geram Pó de Monstro.","ordinaryCreaturesGenerate":false}],
+  "mining": {"testsPerWindow":3,"windowDays":2,"roll":"1d20","successYieldFragments":1,"natural1OptionalCriticalTable":"1d6"},
+  "forging": {
+    "roll":"1d20 + Força ou Constituição",
+    "repairAfterMissionDenarii":20,
+    "natural1DurabilityLoss":1,
+    "armorCriticalHitDurabilityLoss":1,
+    "blueprints": {
+      "simples":{"dc":7,"materials":["ferro-aco","mithril"],"weaponsAndShields":{"stages":2,"intervalMinutes":15},"armor":{"stages":3,"intervalMinutes":20},"failureLimit":1},
+      "mediana":{"dc":12,"materials":["bronze-celestial","uro"],"weaponsAndShields":{"stages":3,"intervalMinutes":30},"armorAndProstheses":{"stages":3,"intervalMinutes":120},"failureLimit":2},
+      "complexa":{"dc":18,"materials":["ouro-imperial"],"weapons":{"stages":5,"intervalMinutes":120},"armorAllowed":false,"shieldsAllowed":false,"failureLimit":3,"lossMustBeReported":true}
     }
-  ],
+  },
   "armorTypes": [
-    {
-      "id": "nenhuma",
-      "name": "Sem armadura",
-      "defense": 0,
-      "reduction": 0
-    },
-    {
-      "id": "leve",
-      "name": "Leve",
-      "defense": 1,
-      "reduction": 1
-    },
-    {
-      "id": "defensiva",
-      "name": "Defensiva",
-      "defense": 2,
-      "reduction": 1
-    },
-    {
-      "id": "responsiva",
-      "name": "Responsiva",
-      "defense": 1,
-      "reduction": 2
-    },
-    {
-      "id": "pesada",
-      "name": "Pesada",
-      "defense": 2,
-      "reduction": 2
-    }
+    {"id":"nenhuma","name":"Sem armadura","defense":0,"reduction":0},
+    {"id":"leve","name":"Leve","defense":1,"reduction":1},
+    {"id":"defensiva","name":"Defensiva","defense":2,"reduction":1},
+    {"id":"responsiva","name":"Responsiva","defense":1,"reduction":2},
+    {"id":"pesada","name":"Pesada","defense":2,"reduction":2,"currentlyAvailable":false}
   ],
   "weaponTypes": [
-    {
-      "id": "corpo-a-corpo",
-      "name": "Corpo a corpo",
-      "die": 8
-    },
-    {
-      "id": "distancia",
-      "name": "À distância",
-      "die": 6
-    },
-    {
-      "id": "desarmado",
-      "name": "Desarmado / improvisado",
-      "die": 6
-    }
+    {"id":"corpo-a-corpo","name":"Corpo a corpo","die":8},
+    {"id":"distancia","name":"À distância","die":6},
+    {"id":"desarmado","name":"Desarmado / improvisado","die":6}
   ]
 }

@@ -1,5 +1,6 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "updatedAt": "2026-09-27",
   "circles": [
     {"circle": 1, "minLevel": 1, "cost": 20},
     {"circle": 2, "minLevel": 10, "cost": 45},
@@ -22,6 +23,8 @@
     "sacrificeEnergyEach": 25,
     "canReduceBelowZero": true,
     "divineBonusesSacrificable": false,
+    "rebentoBonusesSacrificable": false,
+    "protectedBonusSources": ["divine", "rebento"],
     "hpProgressionPenalty": 2
   },
   "highCircleUses": {"6": 2, "7": 2, "8": 1, "9": 1},
@@ -39,6 +42,7 @@
     "O custo é definido pelo círculo utilizado; truques custam 0 Energia.",
     "Fireball e Lightning Bolt usam o turno completo quando conjurados.",
     "Efeitos anteriormente descritos como 1 minuto passam, em regra, a 3 turnos; controles fortes podem usar 2 turnos.",
-    "No despertar, cada ponto retirado de FOR, DES ou CON concede +25 de Energia máxima, até 3 pontos no total."
+    "No despertar, cada ponto retirado de FOR, DES ou CON concede +25 de Energia máxima, até 3 pontos no total.",
+    "Bônus divinos e os +1 concedidos por Rebento de Roma não podem ser sacrificados no despertar mágico."
   ]
 }

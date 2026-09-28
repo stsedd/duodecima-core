@@ -1,8 +1,8 @@
 {
   "core": "Duodécima Core",
   "schemaVersion": 2,
-  "contentVersion": "2026.09.25.1",
-  "updatedAt": "2026-09-25",
+  "contentVersion": "2026.09.27.1",
+  "updatedAt": "2026-09-27",
   "status": "canonical-phase-2",
   "counts": {
     "deities": 52,
@@ -26,6 +26,13 @@
     "magic": "data/magia.json"
   },
   "notes": [
+    "Combate recebe estrutura canônica de 2 ações, 10 m de deslocamento e 1 ação livre, além de Disparada, Defender, Ajudar, Preparar, Furtividade, Percepção Passiva, manobras, cobertura e quedas.",
+    "Iniciativa passa a usar 1d20 + Agilidade; sem a perícia Agilidade, usa-se Destreza pura.",
+    "Aterrissagem em quedas de até 10 m usa Atletismo ou Acrobacia com CD 10 + 2 × metros da queda; a partir de 11 m a criatura termina Caída automaticamente.",
+    "Rebentos de Roma recebem dois +1 em atributos diferentes, podem alcançar teto 6 e seus bônus de Rebento não são sacrificáveis no despertar mágico.",
+    "Sucessor de Rebento começa com 9 pontos distribuíveis e +25 Energia máxima permanente, mantendo teto comum 5 até tornar-se Rebento.",
+    "Honesta Missio, passagem do tempo, anos de serviço, Bolsa Décimus e boas práticas de missão estão estruturados em data/sistema.json.",
+    "Forja recebe blueprints detalhadas e o risco do Ouro Imperial; Bronze Celestial mata monstros mitológicos e não mitológicos, pode ferir outros seres sobrenaturais e não causa dano a mortais.",
     "Fase 2 adiciona resources[] compatível com resource legado, incluindo recursos pessoais, coletivos, por alvo e locais de habilidade.",
     "Maré Crescente, Acúmulo Necromântico e Carga Noturna usam o mesmo limite de Raiva do Trovão: 8 + 1 a cada 10 níveis.",
     "Escolhas persistentes/progressivas de habilidades agora podem ser representadas em choices[] sem depender de interpretação do texto.",
@@ -37,15 +44,13 @@
     "Vis: conjuração por Fé e perícia divina inicial Intimidação.",
     "Regras de Legado e sacrifício do despertar mágico permanecem estruturadas; sacrifícios físicos podem levar FOR/DES/CON abaixo de zero.",
     "Celtas estão liberados e podem aparecer como estrangeiros; a regra está estruturada em data/origens.json.",
-    "Bronze Celestial não afeta criaturas mortais; restrições de alvo dos materiais estão estruturadas em data/equipamentos.json.",
     "Pó de Monstro é material de procedência mitológica ligado ao ciclo do Tártaro; criaturas comuns ou mortais não o geram.",
-    "Estratégia e Enganação agora possuem descrições canônicas completas.",
+    "Estratégia e Enganação possuem descrições canônicas completas.",
     "A política de repetição e acumulação de todos os talentos está explicitada em data/talento-acumulo.json.",
-    "Magia passa a ter fonte estruturada em data/magia.json. Custos finais por círculo: 20, 45, 70, 95, 120, 150, 185, 225 e 270 Energia; truques custam 0.",
-    "No despertar mágico, cada −1 em FOR, DES ou CON concede +25 Energia máxima, até 3 pontos no total; bônus divinos não são sacrificáveis.",
+    "Magia tem fonte estruturada em data/magia.json. Custos finais por círculo: 20, 45, 70, 95, 120, 150, 185, 225 e 270 Energia; truques custam 0.",
     "Vis: HP inicial 30 + Constituição; a cada 10 níveis, +5 + Constituição no HP máximo.",
     "Fortuna: Bênção da Boa Hora dura 2 rodadas em 0–15 e 3 rodadas em 16–29/30+, afetando 1/2/3 criaturas e concedendo +1d4 em ataques e resistências; incompatível com Mau Agouro.",
-    "Legado Direto = DEUS + LEGADO: mantém o kit do deus principal e pode trocar até 3 passivas e 2 das cinco primeiras ativas; HP, atributos e perícia inicial seguem o deus principal. Legado Composto = LEGADO + LEGADO: usa 4 passivas de uma origem + 3 da outra, as cinco primeiras ativas de ambas, sem habilidades 6+, menor HP inicial e escolhas de +2, +1 e perícia entre as duas origens.",
-    "Indefeso é condição canônica: o alvo não rola testes de Defesa e sua Defesa/CA padrão passa a 5. Paralisado e Inconsciente mantêm a automação de Defesa fixa em 5 por concederem Indefeso."
+    "Legado Direto = DEUS + LEGADO; Legado Composto = LEGADO + LEGADO, seguindo as regras estruturadas em data/sistema.json.",
+    "Indefeso é condição canônica: o alvo não rola testes de Defesa e sua Defesa/CA padrão passa a 5."
   ]
 }

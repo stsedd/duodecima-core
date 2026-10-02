@@ -1,8 +1,8 @@
 {
   "core": "Duodécima Core",
   "schemaVersion": 2,
-  "contentVersion": "2026.09.27.1",
-  "updatedAt": "2026-09-27",
+  "contentVersion": "2026.10.02.1",
+  "updatedAt": "2026-10-02",
   "status": "canonical-phase-2",
   "counts": {
     "deities": 52,
@@ -26,6 +26,7 @@
     "magic": "data/magia.json"
   },
   "notes": [
+    "Talentos revisados em 2026-10-02: o padrão passa a ser uma única aquisição, salvo quando o próprio talento autoriza repetição; Adepto Elemental, Campeão e Aumento de Atributo são repetíveis conforme suas descrições.",
     "Combate recebe estrutura canônica de 2 ações, 10 m de deslocamento e 1 ação livre, além de Disparada, Defender, Ajudar, Preparar, Furtividade, Percepção Passiva, manobras, cobertura e quedas.",
     "Iniciativa passa a usar 1d20 + Agilidade; sem a perícia Agilidade, usa-se Destreza pura.",
     "Aterrissagem em quedas de até 10 m usa Atletismo ou Acrobacia com CD 10 + 2 × metros da queda; a partir de 11 m a criatura termina Caída automaticamente.",

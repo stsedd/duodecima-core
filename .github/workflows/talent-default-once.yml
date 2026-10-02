@@ -1,0 +1,32 @@
+name: Apply talent default once
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/talent-default-once.yml
+
+permissions:
+  contents: write
+
+jobs:
+  patch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Patch system talent defaults
+        run: python3 scripts/apply-talent-default.py
+      - name: Validate JSON
+        run: python3 -m json.tool data/sistema.json >/dev/null
+      - name: Commit patch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git rm .github/workflows/talent-default-once.yml scripts/apply-talent-default.py
+          git add data/sistema.json
+          git commit -m 'feat: torna talentos únicos por padrão'
+          git push

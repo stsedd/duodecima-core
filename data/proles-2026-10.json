@@ -633,7 +633,7 @@
           "slot": 7,
           "summary": "Cloacina não desperdiça sujeira. Tudo que é retirado, drenado, lavado ou expulso pode virar recurso nas mãos certas. É nojento? Sim. É útil? Também. Roma não foi feita só de mármore.",
           "tiers": [],
-          "note": ":setinha~1: Acúmulo\n:setinha~1: Remover uma condição negativa de uma criatura: +1 carga de Purificação.\n:setinha~1: Remover veneno, doença, corrupção, maldição menor ou contaminação sobrenatural: +1 carga de Purificação.\n:setinha~1: Drenar uma área contaminada, gás, fumaça, fogo, lodo, veneno, sangue, secreção ou efeito persistente nocivo: +1 carga de Purificação.\n:setinha~1: Remover um efeito mágico forte ou uma condição de risco real em combate: +2 cargas de Purificação, a critério do narrador.\n:setinha~1: Limites\nA prole só pode ganhar até 2 cargas de Purificação por rodada.\nO máximo de cargas de Impureza é 5 + 1 a cada 10 níveis.\nAs cargas desaparecem ao final da cena ou após 2 rodadas sem purificar, drenar, remover efeito nocivo ou lidar com contaminação real.\nAlgumas habilidades de Cloacina podem consumir cargas de Impureza para aumentar dano, cura, redução, alcance, área ou dificuldade de resistência."
+          "note": ":setinha~1: Acúmulo\n:setinha~1: Remover uma condição negativa de uma criatura: +1 carga de Purificação.\n:setinha~1: Remover veneno, doença, corrupção, maldição menor ou contaminação sobrenatural: +1 carga de Purificação.\n:setinha~1: Drenar uma área contaminada, gás, fumaça, fogo, lodo, veneno, sangue, secreção ou efeito persistente nocivo: +1 carga de Purificação.\n:setinha~1: Remover um efeito mágico forte ou uma condição de risco real em combate: +2 cargas de Purificação, a critério do narrador.\n:setinha~1: Limites\nA prole só pode ganhar até 2 cargas de Purificação por rodada.\nO máximo de cargas de Purificação é 5 + 1 a cada 10 níveis.\nAs cargas desaparecem ao final da cena ou após 2 rodadas sem purificar, drenar, remover efeito nocivo ou lidar com contaminação real.\nAlgumas habilidades de Cloacina podem consumir cargas de Purificação para aumentar dano, cura, redução, alcance, área ou dificuldade de resistência."
         }
       ],
       "actives": [
@@ -716,7 +716,7 @@
               "text": "pode afetar até 2 criaturas próximas ou drenar um efeito mais forte de uma única criatura. Se o efeito drenado for mágico, sobrenatural ou de risco real, pode ganhar 2 cargas de Purificação, respeitando o limite por rodada."
             }
           ],
-          "note": "Dreno é mais arriscado e mais voltado para gerar Impureza. Ablução é mais limpa e mais direta.\nEfeitos divinos, maldições maiores ou possessões não são removidos automaticamente por esta habilidade."
+          "note": "Dreno é mais arriscado e mais voltado para gerar Purificação. Ablução é mais limpa e mais direta.\nEfeitos divinos, maldições maiores ou possessões não são removidos automaticamente por esta habilidade."
         },
         {
           "id": "refluxo",

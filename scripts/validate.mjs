@@ -5,6 +5,7 @@ const root=path.resolve(path.dirname(new URL(import.meta.url).pathname),'..');
 const read=p=>JSON.parse(fs.readFileSync(path.join(root,p),'utf8'));
 const m=read('manifest.json');
 const d=read(m.files.gods);
+if(m.files.godsSupplement){ d.deities.push(...read(m.files.godsSupplement).deities); }
 const s=read(m.files.skills);
 const t=read(m.files.talents);
 const tp=read(m.files.talentPolicies);
@@ -74,7 +75,7 @@ const actualCounts={
 for(const [key,value] of Object.entries(actualCounts)){
   if(Number(m.counts?.[key])!==value)errors.push(`manifest.counts.${key}=${m.counts?.[key]} mas o conteúdo possui ${value}.`);
 }
-if(actualCounts.kits!==51) errors.push('Esperados 51 kits disponíveis.');
+if(actualCounts.kits!==53) errors.push('Esperados 53 kits disponíveis.');
 if(!deity('minerva')||deity('minerva').kitAvailable) errors.push('Minerva deve existir sem kit.');
 
 const skillIds=new Set(s.skills.map(x=>x.id));

@@ -1,12 +1,12 @@
 {
   "core": "Duodécima Core",
   "schemaVersion": 2,
-  "contentVersion": "2026.10.02.2",
-  "updatedAt": "2026-10-02",
+  "contentVersion": "2026.10.21.1",
+  "updatedAt": "2026-10-21",
   "status": "canonical-phase-2",
   "counts": {
-    "deities": 52,
-    "kits": 51,
+    "deities": 54,
+    "kits": 53,
     "skills": 26,
     "talents": 32,
     "conditions": 28
@@ -23,9 +23,11 @@
     "system": "data/sistema.json",
     "equipment": "data/equipamentos.json",
     "aliases": "data/aliases.json",
-    "magic": "data/magia.json"
+    "magic": "data/magia.json",
+    "godsSupplement": "data/proles-2026-10.json"
   },
   "notes": [
+    "Tempestas e Cloacina adicionadas em 2026-10-21 via dados complementares canônicos, consumidos por Guia e Ficha.",
     "Talentos revisados em 2026-10-02: o padrão passa a ser uma única aquisição, salvo quando o próprio talento autoriza repetição; Adepto Elemental, Campeão e Aumento de Atributo são repetíveis conforme suas descrições.",
     "Combate recebe estrutura canônica de 2 ações, 10 m de deslocamento e 1 ação livre, além de Disparada, Defender, Ajudar, Preparar, Furtividade, Percepção Passiva, manobras, cobertura e quedas.",
     "Iniciativa passa a usar 1d20 + Agilidade; sem a perícia Agilidade, usa-se Destreza pura.",

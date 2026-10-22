@@ -416,7 +416,7 @@
           "type": "active",
           "slot": 10,
           "level": 50,
-          "cost": 130,
+          "cost": 200,
           "summary": "A cria de Tempestas libera o verdadeiro poder da tempestade. Nuvens, ventos e relâmpagos se condensam ao redor do corpo, formando um avatar colossal que reproduz seus movimentos em escala monstruosa. Conforme os turnos passam, a manifestação se completa, até que a descendente se torna o núcleo de um titã de tempestade.",
           "tiers": [
             {
@@ -886,7 +886,7 @@
           "type": "active",
           "slot": 10,
           "level": 50,
-          "cost": 130,
+          "cost": 200,
           "summary": "Cloacina decide que algo não pertence mais àquele corpo. Possessão, parasita, controle mental, corrupção, maldição, transformação forçada. A prole não pede licença. Ela abre o caminho de saída e manda embora.",
           "tiers": [
             {

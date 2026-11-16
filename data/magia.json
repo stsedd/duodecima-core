@@ -1,38 +1,97 @@
 {
   "schemaVersion": 2,
-  "updatedAt": "2026-09-27",
+  "updatedAt": "2026-11-15",
   "circles": [
-    {"circle": 1, "minLevel": 1, "cost": 20},
-    {"circle": 2, "minLevel": 10, "cost": 45},
-    {"circle": 3, "minLevel": 20, "cost": 70},
-    {"circle": 4, "minLevel": 30, "cost": 95},
-    {"circle": 5, "minLevel": 40, "cost": 120},
-    {"circle": 6, "minLevel": 50, "cost": 150, "uses": 2},
-    {"circle": 7, "minLevel": 60, "cost": 185, "uses": 2},
-    {"circle": 8, "minLevel": 75, "cost": 225, "uses": 1},
-    {"circle": 9, "minLevel": 90, "cost": 270, "uses": 1}
+    {
+      "circle": 1,
+      "minLevel": 1,
+      "cost": 20
+    },
+    {
+      "circle": 2,
+      "minLevel": 10,
+      "cost": 45
+    },
+    {
+      "circle": 3,
+      "minLevel": 20,
+      "cost": 70
+    },
+    {
+      "circle": 4,
+      "minLevel": 30,
+      "cost": 95
+    },
+    {
+      "circle": 5,
+      "minLevel": 40,
+      "cost": 120
+    },
+    {
+      "circle": 6,
+      "minLevel": 50,
+      "cost": 150,
+      "uses": 2
+    },
+    {
+      "circle": 7,
+      "minLevel": 60,
+      "cost": 185,
+      "uses": 2
+    },
+    {
+      "circle": 8,
+      "minLevel": 75,
+      "cost": 225,
+      "uses": 1
+    },
+    {
+      "circle": 9,
+      "minLevel": 90,
+      "cost": 270,
+      "uses": 1
+    }
   ],
   "cantripCost": 0,
   "ritualMinutes": 10,
   "startingCantrips": 2,
   "startingSpells": 3,
-  "castingAttributes": ["int", "fe", "car"],
+  "castingAttributes": [
+    "int",
+    "fe",
+    "car"
+  ],
   "awakening": {
-    "sacrificialAttributes": ["for", "des", "con"],
+    "sacrificialAttributes": [
+      "for",
+      "des",
+      "con"
+    ],
     "maxSacrifices": 3,
     "sacrificeEnergyEach": 25,
     "canReduceBelowZero": true,
     "divineBonusesSacrificable": false,
     "rebentoBonusesSacrificable": false,
-    "protectedBonusSources": ["divine", "rebento"],
+    "protectedBonusSources": [
+      "divine",
+      "rebento"
+    ],
     "hpProgressionPenalty": 2
   },
-  "highCircleUses": {"6": 2, "7": 2, "8": 1, "9": 1},
+  "highCircleUses": {
+    "6": 2,
+    "7": 2,
+    "8": 1,
+    "9": 1
+  },
   "combat": {
     "circleSpellsPerTurn": 1,
     "defaultActions": 1,
     "fullTurnActions": 2,
-    "fullTurnSpells": ["Fireball", "Lightning Bolt"]
+    "fullTurnSpells": [
+      "Fireball",
+      "Lightning Bolt"
+    ]
   },
   "durationGuidance": {
     "defaultFormerOneMinuteTurns": 3,
@@ -44,5 +103,53 @@
     "Efeitos anteriormente descritos como 1 minuto passam, em regra, a 3 turnos; controles fortes podem usar 2 turnos.",
     "No despertar, cada ponto retirado de FOR, DES ou CON concede +25 de Energia máxima, até 3 pontos no total.",
     "Bônus divinos e os +1 concedidos por Rebento de Roma não podem ser sacrificados no despertar mágico."
+  ],
+  "divineAbilityProgression": {
+    "magicalCharacterDefaultMaximumStake": 29,
+    "magicalAffinityDeities": [
+      "jano",
+      "libitina",
+      "trivia",
+      "somnia"
+    ],
+    "additionalAcceptedAliases": [
+      "janus",
+      "somnium"
+    ],
+    "exemptPassiveAbilities": true,
+    "exemptFirstActiveAbilities": 4,
+    "magicalAffinityMaximumStake": 30,
+    "appliesToInheritedAbilitySource": true,
+    "note": "Proles de Jano, Libitina, Trívia e Somnium podem evoluir passivas e quatro primeiras habilidades divinas até a estaca 30, mesmo quando aprendem magia; outras proles mágicas permanecem na segunda estaca (29)."
+  },
+  "rules": {
+    "access": "Um personagem torna-se mágico quando recebe o primeiro círculo; qualquer origem pode despertar magia mediante história, missão, evento, treinamento especial ou recompensa.",
+    "initialBenefits": "Primeiro círculo, atributo de conjuração (Inteligência, Fé ou Carisma), três magias de primeiro círculo e dois cantrips.",
+    "unifiedEnergyPool": "Magia e habilidades divinas consomem a mesma barra de energia. Não existe reserva adicional.",
+    "awakening": "Até 3 pontos de FOR, DES ou CON podem ser sacrificados no despertar, concedendo +25 de Energia máxima por ponto; um atributo pode chegar a -1. Bônus divinos não podem ser sacrificados. Ao sacrificar CON, recalcular HP.",
+    "attributeInsteadOfImprovement": "Em um nível com ganho de atributo, o mágico pode renunciar permanentemente ao ponto e receber +25 de Energia máxima.",
+    "fragility": "Ao receber um aumento de HP máximo por progressão, mágico recebe 2 HP a menos. Despertar tardio recalcula retroativamente o HP, e sacrifícios de CON também afetam HP.",
+    "castingAttribute": "Escolher INT (estudo), FÉ (rituais/devoção) ou CAR (emoção/poder inato) de acordo com a origem da magia; não pode ser trocado por padrão.",
+    "circles": "Nove círculos; o nível mínimo não concede desbloqueio automático. Cada novo círculo depende de recompensa e apenas autoriza aprender magias do mesmo nível ou inferior.",
+    "learning": "Três magias iniciais de primeiro círculo; outras precisam ser obtidas por loot, grimórios, mentores, rituais, objetos ou recompensas. Sem limite fixo de magias conhecidas. Cada magia deve estar registrada e ter fonte identificada. Ensino entre personagens exige talento de nível 60+.",
+    "energyCost": "Custo descontado na conjuração mesmo se ataque errar, alvo resistir ou ocorrer falha crítica. Ao chegar a 50% da Energia, aplicar cansaço; com 0 ou menos, desmaia.",
+    "combat": "Conjurar uma magia usa uma das duas ações do turno. No máximo uma magia de círculo por turno; a outra ação permanece disponível. Exceções fora do turno constam na descrição.",
+    "concentration": "Uma magia com concentração por vez. Termina por inconsciência, 0 Energia, decisão voluntária, nova concentração ou falha em resistência de Constituição (DT 10 ou metade do dano, o maior). Cada fonte de dano exige teste separado.",
+    "upcast": "Apenas magias cuja descrição autorize; requer círculo desbloqueado e custo correspondente ao círculo utilizado.",
+    "rituals": "Fora de combate, 10 minutos de preparação, local seguro e componentes; pagam metade do custo arredondado para cima em múltiplos de 5. Ritual não ocorre em combate, perseguição ou movimento; componentes consumíveis ainda são gastos.",
+    "components": "Verbal (fala), Somático (gestos), Material (objeto). Foco substitui apenas materiais comuns não consumíveis, não materiais raros ou caros.",
+    "focus": "Foco arcano em uma das mãos é obrigatório para conjurar, inclusive sem componente material. Foco comum custa 120 denários; focos personalizados são precificados pelo artesão; material do foco não concede propriedade mecânica.",
+    "focusCrafting": "Três sucessos de Ofício, DT 15, em etapas de 30 minutos. Falha repete etapa após 30 minutos e rola 1d6 de Instabilidade Arcana; falha crítica rola duas vezes. Efeitos narrativos duram uma semana e não alteram números.",
+    "cantrips": "Dois truques iniciais sem custo energético; novos truques aprendidos separadamente.",
+    "highMagic": "Círculos 6 e 7: duas conjurações cada por descanso longo; círculos 8 e 9: uma cada. O limite é compartilhado pelas magias daquele círculo.",
+    "powers": "Magia não substitui poderes divinos e não concede domínio sobre áreas ou autoridades de outros deuses; feitiços continuam sujeitos a custos, componentes e consequências narrativas."
+  },
+  "focusInstabilityTable": [
+    "1 — Crescimento Arcano: cresce 1d10 cm; vestimentas e equipamentos acompanham.",
+    "2 — Encolhimento Arcano: diminui 1d10 cm; vestimentas e equipamentos acompanham.",
+    "3 — Cromatismo Mágico: característica física muda de cor por uma semana.",
+    "4 — Gravidade Questionável: cabelos e objetos soltos flutuam por uma semana, sem efeito em missões.",
+    "5 — Manifestação Inconveniente: borboletas, flores, faíscas, chuva localizada ou equivalente por uma semana.",
+    "6 — Mutação Arcana Temporária: chifres, orelhas, pupilas ou outras alterações inofensivas por uma semana."
   ]
 }

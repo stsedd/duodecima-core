@@ -54,7 +54,7 @@
         }
       ],
       "tierOverrides": {
-        "30+": "por 3 turnos, recebe +2 em ataque e +1d6 de dano físico. Não recupera energia por esta habilidade."
+        "30+": "por 3 turnos, recebe +2 em ataque e +1d6 de dano físico."
       }
     },
     {

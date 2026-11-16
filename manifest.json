@@ -1,8 +1,8 @@
 {
   "core": "Duodécima Core",
   "schemaVersion": 2,
-  "contentVersion": "2026.10.21.1",
-  "updatedAt": "2026-10-21",
+  "contentVersion": "2026.11.15.1",
+  "updatedAt": "2026-11-15",
   "status": "canonical-phase-2",
   "counts": {
     "deities": 54,
@@ -24,9 +24,11 @@
     "equipment": "data/equipamentos.json",
     "aliases": "data/aliases.json",
     "magic": "data/magia.json",
-    "godsSupplement": "data/proles-2026-10.json"
+    "godsSupplement": "data/proles-2026-10.json",
+    "abilityAdjustments": "data/ajustes-habilidades-2026-11.json"
   },
   "notes": [
+    "15/11: regras completas de magia, exceções de estaca 30 para proles mágicas, +2 resistência de forja de Vulcano e cinco revisões de habilidades em camada canônica de ajustes.",
     "Tempestas e Cloacina adicionadas em 2026-10-21 via dados complementares canônicos, consumidos por Guia e Ficha.",
     "Talentos revisados em 2026-10-02: o padrão passa a ser uma única aquisição, salvo quando o próprio talento autoriza repetição; Adepto Elemental, Campeão e Aumento de Atributo são repetíveis conforme suas descrições.",
     "Combate recebe estrutura canônica de 2 ações, 10 m de deslocamento e 1 ação livre, além de Disparada, Defender, Ajudar, Preparar, Furtividade, Percepção Passiva, manobras, cobertura e quedas.",
